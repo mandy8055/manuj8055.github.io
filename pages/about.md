@@ -13,10 +13,10 @@ My name is Manuj I work under the acronym "mandy8055" across the virtual world. 
 <blockquote>Well, An unwanted object first discovered in India in 1996 and now trying to discover itself.</blockquote>
 
  
-<div class="row">
+<!-- <div class="row">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
-</div>
+</div> -->
 
 <!-- ## **Achievements**
 - Achieved Certificate of Recognition in GirlScript Summer of Code 2018
