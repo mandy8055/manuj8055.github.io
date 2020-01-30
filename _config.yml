@@ -1,7 +1,7 @@
 ### Site Settings ###
 title               : mandy8055
 description         : >-
-                      "I love, both, to build things and to break them."
+                      "Well!!!An unwanted Object:)"
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : mandy8055/mandy8055.github.io     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : YoussefRaafatNasry/portfolYOU
@@ -22,7 +22,7 @@ nav_exclude:                                            # The following paths ar
 ### Author Info ###
 author:
   name              : Manuj Sankrit
-  image             : assets/profile.png
+  image             : assets/profile.jpg
   # behance           : your_username
 # dribbble          : your_username
   email             : msankrit8055@gmail.com
