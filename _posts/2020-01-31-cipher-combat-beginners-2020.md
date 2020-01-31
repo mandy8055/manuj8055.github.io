@@ -38,7 +38,7 @@ The flag(HE{You_are_a_tic_tac_toe_Ch@mpion}) is captured successfully.
 ### 2. Shifter Challenge
 In this challenge, we were given a snapshot of the algorithm and we need to find what the particular alogrithm was doing thereby collecting the flag. Unfortunately, I was not able to do this in the challenge but afterwards I realized, this is an assembly code for a function.
 
-{% include elements/figure.html image="https://mandy8055.github.io/assets/2020-01-28-shifter-challenge.png" caption="given image" %}
+{% include elements/figure.html image="https://mandy8055.github.io/assets/2020-01-31-shifter-challenge.png" caption="shifter.png" %}
 
 #### Things I learnt
 
