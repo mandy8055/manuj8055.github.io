@@ -16,12 +16,12 @@ I got this chance as I saw a challenge hosted by [hackerearth for cyber sec begi
 In these two challenges, we were given a binary file **_rev_** and  from where we have to capture the flag.
 ##### Things I learnt
 1. Check the type of file using `file` [command](https://www.computerhope.com/unix/ufile.htm).
-```
+```bash
 $ file TicTacToe 
 TicTacToe: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=b0ab92b6d5cf556d432de814dc8e7ab26b3974da, not stripped
 ```
 2. Using the `strings` [command](http://www.linfo.org/strings.html) to return each string of printable characters in a file.
-```
+```bash
 $ strings TicTacToe
 X always goes first, and in the event that no one has three in a row,
         the game ends in a draw and is called a stalemate.
@@ -34,3 +34,28 @@ X always goes first, and in the event that no one has three in a row,
         HE{You_are_a_tic_tac_toe_Ch@mpion}
 ```
 The flag(HE{You_are_a_tic_tac_toe_Ch@mpion}) is captured successfully.
+
+### 2. Shifter Challenge
+In this challenge, we were given a snapshot of the algorithm and we need to find what the particular alogrithm was doing thereby collecting the flag. Unfortunately, I was not able to do this in the challenge but afterwards I realized, this is an assembly code for a function.
+
+{% include elements/figure.html image="https://mandy8055.github.io/assets/2020-01-28-shifter-challenge.png" caption="given image" %}
+
+#### Things I learnt
+
+1. Meaning of [dword and qword](https://en.wikipedia.org/wiki/Word_(computer_architecture)).
+2. How the String is pushed to a Stack in Assembly language. If we'll notice, we'll see a string specifically **`rf.bo'b/$ke`** is being pushed onto the stack.
+3. If we further analyse the code; it can be clearly see that **var_4h** is being compared to **0xb** (hex value for 11) which seems to be the **length** of the encrypted flag. I did not know the meaning of this thing so I got blocked here and was unable to crack this problem. But thanks to @VikasGola for his [wonderful writeup](https://vikasgola.github.io/blog/cipher-combat-beginners-2020) on this topic.**So It meant that there is a loop on the encrypted flag.**
+4. In the last block every character of the encrypted flag is added with the increment variable of the loop (i.e. eax).
+5. So finally writing a java code for the above logic; we can capture the flag.
+
+```java
+public static void main(String args[]) {
+      String st = "rf.bo'b/$ke";
+      String resFlag = "";
+      for(int i = 0; i < st.length(); i++){
+         resFlag += (char)(st.charAt(i) + (i + 1));
+      }
+      System.out.println(resFlag);
+    }
+```
+The flag `sh1ft-i7-up` is captured successfully.
