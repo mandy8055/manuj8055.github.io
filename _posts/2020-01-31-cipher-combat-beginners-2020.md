@@ -67,7 +67,6 @@ In this challenge, we were given a binary file and were asked to give the argume
 2. We can use `objdump` [command](https://linux.101hacks.com/unix/objdump/) too which can also fulfill the same result. But as a beginner Ghidra was really helpful. I will share how to set-up ghidra soon.
 3. Once, I imported the `threewords` binary in ghidra; it disassembled the binary and when clicking main method it showed the below output.
 4. From the image it is evident that in the argument **racker** is being compared with **talkative** and finally **mainstream** is being passed.
-
 {% include elements/figure.html image="https://mandy8055.github.io/assets/2020-02-01-three-words.png" caption="Image From Ghidra" %}
 
 Hence, the flag `HE{racker_talkative_mainstream}` is captured successfully.
