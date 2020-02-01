@@ -12,7 +12,7 @@ It was one more challenging and adventurous journey for me. I wanted to get my h
 
 I got this chance as I saw a challenge hosted by [hackerearth for cyber sec beginners](https://ciphercombatforbeginners.hackerearth.com/). I had no clue how to begin with but I wanted to begin with; so I registered for the challenge. I am blessed that I managed to get [32nd rank](https://cybersec.hackerearth.com/users/1285) where 1598 people registered. However, rank is not that important for me as this was my first attempt and first time I applied for any live challenge. The thing that mattered for me the most was the journey. I learnt a lot of new things while appearing for the challenge. I will talk about what this challenge (Capture the flag) is all about in some article. This article is about the challenge problems which I solved. So, I will share some of the write ups and useful links which will help me and someone like me who is not sure how to proceed with these challenges.
 
-### 1. Reverse Password and Tic-Tac-Toe Challenges
+### 1. Reverse Password and TicTacToe Challenges
 In these two challenges, we were given a binary file **_rev_** and  from where we have to capture the flag.
 ##### Things I learnt
 1. Check the type of file using `file` [command](https://www.computerhope.com/unix/ufile.htm).
@@ -59,3 +59,14 @@ public static void main(String args[]) {
     }
 ```
 The flag `sh1ft-i7-up` is captured successfully.
+### 3. ThreeWords
+In this challenge, we were given a binary file and were asked to give the arguments which are required to run this file. This was also the same file as rev and tictactoe file discussed previously.
+
+##### Things I learnt
+1. **INTRODUCTION TO [GHIDRA](https://github.com/NationalSecurityAgency/ghidra) AND ITS USAGE**: This was one of the crucial learning from this challenge. This software is amazing and worth giving a try. It has various functionalities which I haven't yet explored but the one which I did was disassembly. It disassembles the binary file back to its code. The code is same which was initially written only with variable names replaced. So live; you can almost taste'em.:nerd_face:
+2. We can use `objdump` [command](https://linux.101hacks.com/unix/objdump/) too which can also fulfill the same result. But as a beginner Ghidra was really helpful. I will share how to set-up ghidra soon.
+3. Once, I imported the `threewords` binary in ghidra; it disassembled the binary and when clicking main method it showed the below output.
+{% include elements/figure.html image="https://mandy8055.github.io/assets/2020-02-01-three-words.jpg" caption="Image From Ghidra" %}
+4. From the image it is evident that in the argument **racker** is being compared with **talkative** and finally **mainstream** is being passed.
+Hence, the flag `HE{racker_talkative_mainstream}` is captured successfully.
+  
