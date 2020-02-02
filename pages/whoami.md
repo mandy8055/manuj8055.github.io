@@ -1,14 +1,14 @@
 ---
 layout: page
-title: About
+title: whoami
 permalink: /about/
 weight: 3
 ---
 
 # **About Me**
 
-Hi I am **{{ site.author.name }}** :wave:,<br>
-My name is Manuj I work under the acronym "mandy8055" across the virtual world. A student with insatiable desire to learn, jack of all trades but master of none, true patriot, motivator in the morning, fitness freak in the evening and programmer-cum-developer in night. I like to learn languages also therefore I learnt Italian. You can catch me on github, stack overflow and Hackerearth with stellar reputations(Of course if you like). I always like to help  people who are in need and therefore feel free to share your thoughts and opinions about virtual world. One liner from me to describe myself:
+Hi I am **{{ site.author.name }}** :cowboy_hat_face:,<br>
+I work under the acronym "mandy8055" across the virtual world. A student with insatiable desire to learn, jack of all trades but master of none, true patriot, motivator in the morning, fitness freak in the evening and programmer-cum-developer in night. I like to learn languages also therefore I learnt Italian. You can catch me on github, stack overflow and Hackerearth with stellar reputations(Of course if you like). I always like to help  people who are in need and therefore feel free to share your thoughts and opinions about virtual world. One liner from me to describe myself:
 
 <blockquote>Well, An unwanted object first discovered in India in 1996 and now trying to discover itself.</blockquote>
 
