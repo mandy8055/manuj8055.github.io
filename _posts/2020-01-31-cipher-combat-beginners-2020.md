@@ -10,7 +10,7 @@ description: Writup for reverse Engineering challenges for cipher combat ctf hel
 
 It was one more challenging and adventurous journey for me. I wanted to get my hands on the **cyber sec tools and techniques** to face some real world problems and scenarios. And I was ruminating from where to start. Since, I am a self-taught programmer and therefore I know that when I jump to some new domain it is always painful in the beginning as there is no clue or trail. Google always helps but in a diverse ways. But when you’re committed enough to learn then everything just becomes a cakewalk afterwards. There is a saying, _"When you want something badly and that for the welfare of human kind; the universe conspires to bring that to you in mysterious ways.”_
 
-I got this chance as I saw a challenge hosted by [hackerearth for cyber sec beginners](https://ciphercombatforbeginners.hackerearth.com/). I had no clue how to begin with but I wanted to begin with; so I registered for the challenge. I am blessed that I managed to get [32nd rank](https://cybersec.hackerearth.com/users/1285) where 1598 people registered. However, rank is not that important for me as this was my first attempt and first time I applied for any live challenge. The thing that mattered for me the most was the journey. I learnt a lot of new things while appearing for the challenge. I will talk about what this challenge (Capture the flag) is all about in some article. This article is about the challenge problems which I solved. So, I will share some of the write ups and useful links which will help me and someone like me who is not sure how to proceed with these challenges.
+I got this chance as I saw a challenge hosted by [hackerearth for cyber sec beginners](https://ciphercombatforbeginners.hackerearth.com/). I had no clue how to begin with but I wanted to begin with; so I registered for the challenge. I am blessed that I managed to get [30th rank](https://cybersec.hackerearth.com/users/1285) where 1598 people registered. However, rank is not that important for me as this was my first attempt and first time I applied for any live challenge. The thing that mattered for me the most was the journey. I learnt a lot of new things while appearing for the challenge. I will talk about what this challenge (Capture the flag) is all about in some article. This article is about the challenge problems which I solved. So, I will share some of the write ups and useful links which will help me and someone like me who is not sure how to proceed with these challenges.
 
 ### 1. Reverse Password and TicTacToe Challenges
 In these two challenges, we were given a binary file **_rev_** and  from where we have to capture the flag.
@@ -70,4 +70,20 @@ In this challenge, we were given a binary file and were asked to give the argume
 {% include elements/figure.html image="https://mandy8055.github.io/assets/2020-02-01-three-words.png" caption="Image From Ghidra" %}
 
 Hence, the flag `HE{racker_talkative_mainstream}` is captured successfully.
+
+### Conclusion of reverse Engineering Challenges[Tl;dr;]
+In a nutshell, if I talk about the things which I learnt from reverse engineering challenges:
+1. Check the type of file
+
+    -`file BINARY_FILE_TO_TEST`
+
+2. Analyse the binary for the values which it prints
+    
+    -`strings BINARY_FILE_TO_TEST`{If captured the flag here Stop.}
+
+3. Use **Ghidra** to analyse the binary
+    
+    -Always start analysing the binary from **main** function.
+
+4. Know the basics of assembly language and some commonly used instruction set.
   
