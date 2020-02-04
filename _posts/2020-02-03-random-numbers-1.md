@@ -1,5 +1,5 @@
 ---
-title: Random Numbers in Java[Part 1]
+title: Random Numbers in Java
 tags: [java, Random Numbers]
 style:
 color:
