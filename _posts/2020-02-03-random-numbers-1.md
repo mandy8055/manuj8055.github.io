@@ -8,11 +8,11 @@ description: Basics of Random numbers generation in java
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
 
-Random Numbers are inherent part of any application. They are used in banking applications, e-commerce applications, lottery ticket generation, etc. Java provides support for generating random numbers primarily using [java.lang.math](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html) and [java.util.Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html) 
+Most of the commercial applications require tokens which needs to be generated at fixed intervals of time. This is the reason why Random number generation is very important tool for any software developer. They are used in banking applications, e-commerce applications, lottery ticket generation, etc. Java provides support for generating random numbers primarily using [java.lang.math](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html) and [java.util.Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html) 
 
 ### Random Numbers using Math class
 
-The Math class contains static `random()` method which generates random numbers in the range [0.0, 1.0). When we call the `Math.random()` method; internally a `java.util.Random` pseudonumber generator object is created and used.
+The Math class contains static `random()` method which generates random numbers in the range **[0.0, 1.0)**. When we call the `Math.random()` method; internally a `java.util.Random` pseudonumber generator object is created and used.
 
 #### Generating random Numbers within a given range
 The standard expression for generating random Numbers within a given range(in integer) is:
@@ -21,15 +21,15 @@ The standard expression for generating random Numbers within a given range(in in
 ```
 
 ##### Breaking the above expression down
-1. Multiply the magnitude of random number(which we got from Math.random()) with the range of numbers you want to calculate`(maxRange - minRange + 1)`. Notice here the **max range is excluded** from the answer.
-2. Shift the range up to the range you are targeting by add the result with **min**.
-3. The return type of the above expression is **double**. So, the answer which you'll get will still be in double. To get the integer result you **need to type cast it**.
+1. Multiply the magnitude of random number(which we got from Math.random()) with the range of numbers you want to calculate`(maxRange - minRange + 1)`. Notice here the **max range is excluded** from the answer. For example, say Math.random() gave **0.5**. We want to generate random numbers between **20 and 30**. Therefore, ((30 - 20) + 1) = 5.5. 
+2. Shift the range up to the range you are targeting by add the result with **min** i.e. 5.5 + 20 = 25.5
+3. The return type of the above expression is **double**. So, the answer which you'll get will still be in double. To get the integer result you **need to type cast it** i.e. we got 25.
 
-**NOTE:** You can pass the range of negative values to generate negetive numbers in the given range. 
+**NOTE:** You can pass the range of negative values to **generate negative random numbers** in the given range. 
 
 ### Random Numbers using the Random class
 
-To generate the random numbers using this method;
+To generate the random numbers using **Random** class method;
 1. Create an instance(object) of Random class.
 2. Call one of the random value generator method such as `nextInt()`, `nextDouble()`, or `nextLong()`.
 
