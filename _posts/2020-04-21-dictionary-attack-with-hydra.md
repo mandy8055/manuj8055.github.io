@@ -59,19 +59,19 @@ Let us see it in action using an example. I am using [**metasploitable**](https:
 
 * From the page we have got our **IP address**, the **protocol on which it is running(http)** and **Failure login Message**(_Don't worry!I'll let you know where the fromer two parts will be useful_).
 
-* Now the next thing, which we need to do is to inspect the **action type** of the form which this web application is using(I presume you'll be knowing **how to know the form action type:thinking**:[Write click on the form and click on **_inspect element_**]).By doing this; we came to know about the form type i.e. **POST**. If you'll know the [difference between GET and POST](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=12&cad=rja&uact=8&ved=2ahUKEwj8xJn8tfnoAhVUfisKHQZ1CoQQFjALegQIAhAB&url=https%3A%2F%2Fwww.w3schools.com%2Ftags%2Fref_httpmethods.asp&usg=AOvVaw1Jv4zkrWlgxGHp_1W9ypYB), you'll know that POST requests are hidden. They are not visible in the url.
+* Now the next thing, which we need to do is to inspect the **action type** of the form which this web application is using(I presume you know **how to get the form action type**:thinking:[Right click on the form and click on **_inspect element_**]).By doing this; we came to know about the form type i.e. **POST**. If you'll know the [difference between GET and POST](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=12&cad=rja&uact=8&ved=2ahUKEwj8xJn8tfnoAhVUfisKHQZ1CoQQFjALegQIAhAB&url=https%3A%2F%2Fwww.w3schools.com%2Ftags%2Fref_httpmethods.asp&usg=AOvVaw1Jv4zkrWlgxGHp_1W9ypYB), you'll know that POST requests are hidden. They are not visible in the url.
 
 * Next thing which we need is to do is to find out what are the **parameters** which are sent to the server along with username and password. To know this, we are going to use [**BurpSuite**](https://portswigger.net/burp); another very helpful tool for hackers. I'll talk about it in some other blog later. For quick gist, I'm using **BurpSuite's proxy to intercept HTTP requests**. Below is the image which shows the parameters that are sent to dvwa server when I used _username as admin and password as somerandompass_.
 
 {% include elements/figure.html image="https://mandy8055.github.io/assets/2020-04-21-burp-screen.png" caption="Intercepted POST request" %}
 
-* That's it; we have all the things needed to construct our command for hydra. Now, let us write the command and understand its various parts in detail.
+* That's it; we have all the things needed to construct our command for hydra. Now, let us write the command and understand its **service type** part in detail.
 
-**Command:** hydra 192.168.43.205 -l admin -P dict.txt http-form-post "/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:F=Login failed"
+**Command:** hydra 192.168.43.205 -l admin -P dict.txt http-post-form "/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:F=Login failed"
 
 #### Command Overview[The service Part]:
 
-* **_http-form-post_** - It is the name of the service which tells hydra what the web app is using. You can man it to get more info.
+* **_http-post-form_** - It is the name of the service which tells hydra what the web app is using. You can man it to get more info.
 * **_"/dvwa/login.php:username=^USER^&password=^PASS^&login=Login:F=Login Failed"_** - This part which is enclosed in quotes contain three colons. Let us break them down one by one.
     * I<sup>st</sup> part: This part of the colon represents the page where the attack needs to be launched.
     * II<sup>nd</sup> part: This part of the colon represents the parameters that are passed to dvwa server everytime the user tries to log in(**The reason why we used Burp proxy**).
@@ -80,7 +80,7 @@ Let us see it in action using an example. I am using [**metasploitable**](https:
 Finally, fire up the terminal and paste this command, and you'll see the result below:
 
 ```bash
-~# hydra 192.168.43.205 -l admin -P dict.txt http-form-post "/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:F=Login failed"
+~# hydra 192.168.43.205 -l admin -P dict.txt http-post-form "/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:F=Login failed"
 Hydra v9.0 (c) 2019 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
 
 Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2020-04-21 16:14:47
