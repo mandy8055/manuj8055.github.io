@@ -28,7 +28,7 @@ Crunch will now generate the following number of lines: 262144
 
 crunch: 100% completed generating output
 ```
-###### Command overview:
+#### Command overview:
 
 * **_crunch_** - name of the tool
 * **_8_** - minimum length
@@ -44,7 +44,7 @@ Now, that our dictionary is ready next thing to do is to launch the wordlist att
 Using the tool is simple. Fire up the terminal and type the command below:
 
 **SYNTAX:** hydra [IP] -L[usernames] -P[password list] [service]
-###### Command overview:
+#### Command overview:
 * **_hydra_** - Name of the tool
 * **_IP_** - IP address of the target website (I presume you can **convert the domain names to ip addresses**:thinking:[dig +short www.example.com]) 
 * **-L** - List of usernames to bruteforce the target. Use -l for giving just one user.
@@ -69,7 +69,7 @@ Let us see it in action using an example. I am using [**metasploitable**](https:
 
 **Command:** hydra 192.168.43.205 -l admin -P dict.txt http-form-post "/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:F=Login failed"
 
-###### Command Overview[The service Part]:
+#### Command Overview[The service Part]:
 
 * **_http-form-post_** - It is the name of the service which tells hydra what the web app is using. You can man it to get more info.
 * **_"/dvwa/login.php:username=^USER^&password=^PASS^&login=Login:F=Login Failed"_** - This part which is enclosed in quotes contain three colons. Let us break them down one by one.
