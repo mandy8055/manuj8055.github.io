@@ -8,7 +8,7 @@ description: Understanding the working of RSA algorithm and implementing it to c
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
 
-Cryptography is a method of protecting information and communications through the use of codes, so that only the intended users can read and process it. With the increase in cyber crimes there is a requirement of more and more cryptographic ways to protect information. One of the successful algorithms which prevails in today's world and is used almost every plethora of virtual world **RSA algorithm** which is named after its creators Ron Rivest, Adi Shamir and Leonard Adleman. It is one of the most secure algorithms and it is believed that only the quantum computers can break this algorithm in a feasible way.
+Cryptography is a method of protecting information and communications through the use of codes, so that only the intended users can read and process it. With the increase in cyber crimes these days,  there is a dire need of more and more secure ways to protect information. One of the successful algorithms which even prevails in today's world and is used almost in every plethora of virtual world is **RSA algorithm** which is named after its creators Ron Rivest, Adi Shamir and Leonard Adleman. It is one of the most secure algorithms and it is believed that only the quantum computers can break this algorithm in a feasible way.
 
 In this blog post, I will discuss the working of this algorithm and how you can use this understanding in order to solve the CTF problems which are based on RSA encryption and decryption.
 
@@ -16,11 +16,11 @@ In this blog post, I will discuss the working of this algorithm and how you can 
 Let us understand this with the help of simple example and a communication medium and then we will try to break down each part of it in detail.
 
 Let us assume Bob wants to send the plain text(P) **B** to Alice.
-* **B** will be converted to integer. For simplicity let us assume that **B** is converted to **2**(Its place value in letters).
+* **B** will be converted to integer. For simplicity let us assume that **B** is converted to **2**(its place value in letters).
 * Alice gives the two numbers to Bob. The numbers are e=5 and N=14(Stay with me, I will explain why we chose e and N). Here e and N are **public key**. Public key is the key which can be shared with the outside world.
 * Bob calculates the cipher text(C) using the function **_C = P<sup>e</sup>(mod N)_** i.e. 2<sup>5</sup>(mod 14) = 4 which is equivalent to **D** and sends it to Alice.
 * Now Alice got the cipher text message as **D**. So Alice wants to decrypt it in order to get the plain text.
-* Alice uses the her secret key to decrypt the message. She uses d=11 and N=14. Here d and N are the **private key**. Private key is the key which is generated and kept secretely from the outside world.
+* Alice uses her secret key to decrypt the message. She uses d=11 and N=14. Here d and N are the **private key**. Private key is the key which is generated and kept secretely from the outside world.
 * Alice calulates the plain text(P) message using the function **_P = C<sup>d</sup>(mod N)_** i.e. 4<sup>11</sup>(mod 14) = 2 which is equivalent to **B**.
 
 Above are the steps how RSA works. Now, it's the time to unravel the mysteries behind the selection of values for e,N and d.
@@ -31,8 +31,8 @@ Let us see step by step how the math behind the algorithm works.
 
 * **STEP 1**: Choose two prime numbers p and q arbitrarily. I chose p = 2 and q = 7. In real-time applications, these prime numbers are humongous(minimum 2048 bits each).
 * **STEP 2**: Take the product of p and q. The **result** is our number N i.e. 14.
-* **STEP 3**: Calculate Φ(N). Write the numbers from 1 till N i.e. 14 and cross out all the numbers which are the factors of 14(except 1) and multiples of the factors of 14. Sounds confusing. Factors of 14 are 2 and 7. Multiples of 2 and 7 less than or equal to 14 are 4, 6, 8, 10, 12 and 14. Crossing out all these numbers we are left with 1, 3, 5, 9, 11 and 13. These numbers are **[co-prime]**(https://en.wikipedia.org/wiki/Coprime_integers) with 14.
-    * This method is infeasible. Because, let's assume that if N is very large, then we have to write all the numbers from 1 to N and then cross-out the factors and their multiples. Luckily we have something called mathemagic. One of the greatest mathemagician of all times [Leonhard Euler](https://en.wikipedia.org/wiki/Leonhard_Euler) gave his totient function i.e. Φ(N) = (p - 1)*(q - 1). Math is magic.
+* **STEP 3**: Calculate Φ(N). Write the numbers from 1 till N i.e. 14 and cross out all the numbers which are the factors of 14(except 1) and multiples of the factors of 14. Sounds confusing:thinking:. Let's get the thing straight. Factors of 14 are 2 and 7. Multiples of 2 and 7 less than or equal to 14 are 4, 6, 8, 10, 12 and 14. Crossing out all these numbers we are left with 1, 3, 5, 9, 11 and 13. These numbers are **[co-prime]**(https://en.wikipedia.org/wiki/Coprime_integers) with 14.
+    * This method is infeasible. Because, let's assume that if N is very large, then we have to write all the numbers from 1 to N and then cross-out the factors and their multiples. Luckily, we have something called mathemagic(I meant mathematics). One of the greatest mathemagician of all times [Leonhard Euler](https://en.wikipedia.org/wiki/Leonhard_Euler) gave his totient function i.e. Φ(N) = (p - 1)*(q - 1). Math is magic.
 * **STEP 4**: Select e such that;
     * 1 < e < Φ(N)
     * e should be co-prime to N and Φ(N). Therefore, **e = 5**.
