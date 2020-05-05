@@ -6,8 +6,11 @@ color:
 description: Understanding the working of RSA algorithm and implementing it to capture the flag involving RSA decryption problems.
 comments: true
 ---
+
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
+
+---
 
 Cryptography is a method of protecting information and communications through the use of codes, so that only the intended users can read and process it. With the increase in cyber crimes these days,  there is a dire need of more and more secure ways to protect information. One of the successful algorithms which even prevails in today's world and is used almost in every plethora of virtual world is **RSA algorithm** which is named after its creators Ron Rivest, Adi Shamir and Leonard Adleman. It is one of the most secure algorithms and it is believed that only the quantum computers can break this algorithm in a feasible way.
 

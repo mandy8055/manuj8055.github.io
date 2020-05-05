@@ -6,8 +6,11 @@ color:
 description: Writup for reverse Engineering challenges for cipher combat ctf held on 22 january 2020.
 comments: true
 ---
+
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
+
+---
 
 It was one more challenging and adventurous journey for me. I wanted to get my hands on the **cyber sec tools and techniques** to face some real world problems and scenarios. And I was ruminating from where to start. Since, I am a self-taught programmer and therefore I know that when I jump to some new domain it is always painful in the beginning as there is no clue or trail. Google always helps but in a diverse ways. But when you’re committed enough to learn then everything just becomes a cakewalk afterwards. There is a saying, _"When you want something badly and that for the welfare of human kind; the universe conspires to bring that to you in mysterious ways.”_
 

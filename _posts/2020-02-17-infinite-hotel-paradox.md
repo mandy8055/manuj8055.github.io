@@ -6,8 +6,11 @@ color:
 description: Understanding the notion of countably infinite sets through Hilbert's grand Hotel paradox.
 comments: true
 ---
+
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
+
+---
 
 Since, the time I was introduced to discrete mathematics and the applications which it provides to Computer Science; I have developed a stronger affinity towards it. One of the things which fascinates me the most are paradoxes and logical inconsistensies which challenges my mind to think further. **Paradoxes** are statements or proposition which are logically acceptable through reasoning but lead to a conclusions that seems unacceptable. In general terms, paradoxes are self-contradictory propositions or statements. Here let us discuss a paradox, which is very famous and will also cement our understanding on **countably infinite sets**. Before diving directly on the paradox let us first get a primer on Sets and their cardinality. 
 

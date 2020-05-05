@@ -6,8 +6,11 @@ color:
 description: Distinction between concurrency and parallelism through java language construct.
 comments: true
 ---
+
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
+
+---
 
 This post talks about the meaning of **concurrency and parallelism**. It also draws a distinctions between these two. There are times when the concepts which we understand theoretically needs some practical implications. In Operating System, we have studied the meaning of these two terms but more often we tend to confuse when it comes to their implementation. So let us deal these two terms one by one.
 

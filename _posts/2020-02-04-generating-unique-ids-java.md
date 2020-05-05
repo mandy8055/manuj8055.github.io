@@ -6,8 +6,11 @@ color:
 description: Ways of Generating identifiers for real-time applications and usages
 comments: true
 ---
+
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
+
+---
 
 There are numerous applications which require unique identification numbers at every fixed interval so that the small tasks or subroutines can be idetified uniquely. For instance, transaction ids, token numbers, SSIDs(Service Set identifiers),etc. needs to be unique. There are many ways of generating unique identifiers in java but today let us discuss some of the best and frequently used techniques.
 We are going to discuss three major ways of generating unique ids:

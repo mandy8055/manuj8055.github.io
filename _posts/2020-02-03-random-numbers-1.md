@@ -6,8 +6,11 @@ color:
 description: Basics of Random numbers generation in java
 comments: true
 ---
+
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
+
+---
 
 Most of the commercial applications require tokens which needs to be generated at fixed intervals of time. This is the reason why Random number generation is very important tool for any software developer. They are used in banking applications, e-commerce applications, lottery ticket generation, etc. Java provides support for generating random numbers primarily using [java.lang.math](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html) and [java.util.Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html) 
 

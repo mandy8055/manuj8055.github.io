@@ -6,8 +6,11 @@ color:
 description: Few best practices while dealing with Arrays problems in Competitive Programming using java.
 comments: true
 ---
+
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
+
+ ---   
 
 This post is based on my experiences of using util.Arrays class's methods for competitive programming. Competitive programming deals with problems of various plethoras which includes discrete mathematics, Data Structures and implementations, etc. **Arrays** are one of the most important data Structures that are used almost everywhere across the virtual world. It finds its most important role in competitive programming too. So, it is important to utilize some of the basic toolbox from language in which you're coding which might facilitate in easing your task while dealing with these problems.
 

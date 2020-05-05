@@ -6,8 +6,11 @@ color:
 description: Big Integers and their importance in Competitive Coding
 comments: true
 ---
+
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
+
+---
 
 Competitive coding has always been a fun part for me. I strongly believe that everyone; irrespective of the computer science background should do competitive coding. It is just like playing Chess. You can play chess everyday just to test your logical limits and enhance it. I'll try to draw a little comparison. Just like in Chess you need to learn the moves of the every pieces; in competitive coding you need to know a programming language that will help you to start and enjoy the essence of programming. Only this part is little time-consuming. Rest is same. You practice, you loose; you practice, you improve; you practice, and finally you win.
 
