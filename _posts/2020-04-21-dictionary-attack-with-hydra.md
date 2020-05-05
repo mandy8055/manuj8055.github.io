@@ -1,7 +1,7 @@
 ---
 title: Guessing Login passwords with Hydra
 tags: [Ethical Hacking, Web Penetration testing]
-style:Guessing Login passwords with Hydra
+style:
 color:
 description: Launching dictionary attacks on login forms using Hydra.
 comments: true
