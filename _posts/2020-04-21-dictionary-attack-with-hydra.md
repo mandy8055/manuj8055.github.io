@@ -1,7 +1,7 @@
 ---
 title: Guessing Login passwords with Hydra
 tags: [Ethical Hacking, Web Penetration testing]
-style:
+style:Guessing Login passwords with Hydra
 color:
 description: Launching dictionary attacks on login forms using Hydra.
 ---
@@ -65,7 +65,7 @@ Let us see it in action using an example. I am using [**metasploitable**](https:
 
 {% include elements/figure.html image="https://mandy8055.github.io/assets/2020-04-21-burp-screen.png" caption="Intercepted POST request" %}
 
-* That's it; we have all the things needed to construct our command for hydra. Now, let us write the command and understand its **service type** part in detail.
+* That's it; we have all the things needed to construct our command for hydra. Now, let us write the full command and understand its **service type** part in detail.
 
 **Command:** hydra 192.168.43.205 -l admin -P dict.txt http-post-form "/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:F=Login failed"
 
@@ -77,7 +77,7 @@ Let us see it in action using an example. I am using [**metasploitable**](https:
     * II<sup>nd</sup> part: This part of the colon represents the parameters that are passed to dvwa server everytime the user tries to log in(**The reason why we used Burp proxy**).
     * III<sup>rd</sup> part: This part of the colon shows what is the text that will be visible on the page when login failure(because we used **F** option) occurs.
 
-Finally, fire up the terminal and paste this command, and you'll see the result below:
+Finally, fire up the terminal and paste the above command, and you'll see the result below:
 
 ```bash
 ~# hydra 192.168.43.205 -l admin -P dict.txt http-post-form "/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:F=Login failed"

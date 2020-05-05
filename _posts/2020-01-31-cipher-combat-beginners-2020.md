@@ -86,4 +86,4 @@ In a nutshell, if I talk about the things which I learnt from reverse engineerin
     -Always start analysing the binary from **main** function.
 
 4. Know the basics of assembly language and some commonly used instruction set.
-  
+{% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}
