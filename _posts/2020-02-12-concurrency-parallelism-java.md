@@ -4,6 +4,7 @@ tags: [java, Multi-threading, concurrency]
 style:
 color:
 description: Distinction between concurrency and parallelism through java language construct.
+comments: true
 ---
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
@@ -127,3 +128,5 @@ public static void main(String[] args){
 ```
 
 If you notice the code above, the task which acquires the lock that task will only the execute its instructions(i.e. access the shared resource and updates it) untill and unless it releases its lock thus making the instructions inside the taks atomic. So, the threads are co-ordinating between each other using a single lock to accomplish a certain task.
+
+{% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}

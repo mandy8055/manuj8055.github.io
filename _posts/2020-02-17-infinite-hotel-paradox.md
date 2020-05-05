@@ -4,6 +4,7 @@ tags: [Discrete Mathematics, Countably Infinite Sets]
 style:
 color:
 description: Understanding the notion of countably infinite sets through Hilbert's grand Hotel paradox.
+comments: true
 ---
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
@@ -29,3 +30,5 @@ Imagine a hotel with infinite number of rooms and a very hardworking night manag
 - **Case 2:** Now, an infinetely large bus with **countably-infinite number of passengers** pulls up to rent a room. Now, to arrange the rooms for every passengers, the night manager comes up with the idea of shifting every **n<sup>th</sup> room person to every 2n<sup>th</sup> room** thereby filling only even numbered rooms and emptying the odd numbered rooms. So now we can accomodate the new infinte guests in these odd numbered rooms thereby making the hotel business booming. Maths always works and that's why it is fun.:innocent:
 
 {% include elements/figure.html image="https://mandy8055.github.io/assets/2020-02-17-Hilberts-paradox-3.png" caption="Odd and Even Arrangement of Rooms" %}
+
+{% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}

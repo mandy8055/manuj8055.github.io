@@ -4,6 +4,7 @@ tags: [Cryptography, Algorithms, CTF]
 style:
 color:
 description: Understanding the working of RSA algorithm and implementing it to capture the flag involving RSA decryption problems.
+comments: true
 ---
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
@@ -84,3 +85,5 @@ Bingo; we captured the flag.
 
 # Conclusion
 The compexity of RSA algorithm lies in the fact that the **prime factorization of large number is hard**. This is the only reason why RSA is still prevelant and is used in every area across virtual world. However, RSA algorithm is not impenetrable. Quantum computers can crack it very efficiently. You can watch [this](https://www.youtube.com/watch?v=6H_9l9N3IXU) amazing youtube video on further elaboration.
+
+{% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}

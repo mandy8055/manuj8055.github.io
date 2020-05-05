@@ -4,6 +4,7 @@ tags: [java, Random Numbers, Practical Applications]
 style:
 color:
 description: Ways of Generating identifiers for real-time applications and usages
+comments: true
 ---
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
@@ -154,3 +155,5 @@ public static void logger(Object obj){
     System.out.println(String.valueOf(obj));
 }
 ```
+
+{% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}

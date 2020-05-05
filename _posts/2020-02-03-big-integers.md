@@ -4,6 +4,7 @@ tags: [java, BigIntegers]
 style:
 color:
 description: Big Integers and their importance in Competitive Coding
+comments: true
 ---
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
@@ -99,3 +100,4 @@ double c = A.doubleValue();
 
 The **BigInteger** class is really a life saver in many situations and instances when it comes to Competitive programming. However, everything good comes with a cost too and so are BigIntegers. These operations are not constant operations as was the case with primitive types. For instance, consider the addition of two numbers. If we talk about complexity addition of two numbers(using primitive types) is always O(1) but when it comes to BigInteger that is not the case. **It depends upon the number of digits of the numbers we are taking into consideration.** That is one point to take care while using BigIntegers. As a conclusion, BigIntegers are really a great tool to have in your coding toolbox.  
 
+{% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}

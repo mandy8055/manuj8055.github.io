@@ -4,6 +4,7 @@ tags: [CTF, Cyber Security, Hackerearth]
 style: 
 color: 
 description: Writup for reverse Engineering challenges for cipher combat ctf held on 22 january 2020.
+comments: true
 ---
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
@@ -86,4 +87,5 @@ In a nutshell, if I talk about the things which I learnt from reverse engineerin
     -Always start analysing the binary from **main** function.
 
 4. Know the basics of assembly language and some commonly used instruction set.
+
 {% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}

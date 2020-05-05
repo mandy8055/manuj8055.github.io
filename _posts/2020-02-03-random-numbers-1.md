@@ -4,6 +4,7 @@ tags: [java, Random Numbers]
 style:
 color:
 description: Basics of Random numbers generation in java
+comments: true
 ---
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
@@ -63,3 +64,4 @@ Mostly all the random generator throughout languages implements [linear Congruen
 
 There is one more interesting resource which I got recently. You can read about it at **[random.org](https://random.org/)** which generates true random numbers that are generated via **atmospheric noise**. 
 
+{% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}

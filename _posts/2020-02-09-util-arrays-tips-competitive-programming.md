@@ -4,6 +4,7 @@ tags: [java, Competitive Programming, Arrays]
 style:
 color:
 description: Few best practices while dealing with Arrays problems in Competitive Programming using java.
+comments: true
 ---
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
@@ -160,3 +161,5 @@ int[] arr2 = Arrays.copyOfRange(arr1, 1, 4);
 ```
 
 There are other methods of Arrays class; but these are the most frequently used and required methods which are used in competitive coding. For more methods of the class please refer the [oracle docs.](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html)
+
+{% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}
