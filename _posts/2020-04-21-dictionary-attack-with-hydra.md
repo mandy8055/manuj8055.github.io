@@ -4,10 +4,12 @@ tags: [Ethical Hacking, Web Penetration testing]
 style:Guessing Login passwords with Hydra
 color:
 description: Launching dictionary attacks on login forms using Hydra.
+comments: true
 ---
 
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
+    
 ---    
 
 This post will help us learn how to create our own dictionary of passwords and then launch atatcks on login forms using the dictionary we created along with the **Kali based tool Hydra**. These days almost all the websites contain authentication forms. Therefore, this tool is very handy when launching bruteforce attacks. So, before getting our hands dirty with the tool; let us first polish some of our basics about dictionary and bruteforce attacks.
