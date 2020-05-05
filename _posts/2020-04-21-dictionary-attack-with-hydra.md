@@ -12,10 +12,10 @@ comments: true
     
 ---    
 
-This post will help us learn how to create our own dictionary of passwords and then launch atatcks on login forms using the dictionary we created along with the **Kali based tool Hydra**. These days almost all the websites contain authentication forms. Therefore, this tool is very handy when launching bruteforce attacks. So, before getting our hands dirty with the tool; let us first polish some of our basics about dictionary and bruteforce attacks.
+This post will help us learn how to create our own dictionary of passwords and then launch atatcks on login forms using the dictionary we created along with the **Kali based tool Hydra**. These days almost all the websites contain authentication forms. Therefore, this tool is very handy when launching brute-force attacks. So, before getting our hands dirty with the tool; let us first polish some of our basics about dictionary and brute-force attacks.
 
-# Bruteforce attack vs Dictionary Attack
-We often use bruteforce and dictionary attack interchangeably and it is somewhat right but there is a subtle difference between them. We can think bruteforce attack as a **superset** of dictionary attack. Bruteforce attacks are exhaustive attacks which tries all the possibilities (viz. letters, characters, special characters, and their combinartions as well) where as in dictionary attack we provide a dictionary i.e. list of words(can be letters, characters and also their combinations) from which the target system is penetrated with. **Brute force** attacks being exhaustive will ensure that you'll get the field data(password filed, username, etc.), but as it is exhaustive; the time taken will vary(will be enormous for secured passwords). On the other hand, **dictionary attcks** are selective so, it may provide false positives but it is fast. So, practically we prefer dictionary attacks rather than bruteforce.
+# Brute-force attack vs Dictionary Attack
+We often use brute-force and dictionary attack interchangeably and it is somewhat right but there is a subtle difference between them. We can think brute-force attack as a **superset** of dictionary attack. Brute-force attacks are exhaustive attacks which tries all the possibilities (viz. letters, characters, special characters, and their combinartions as well) where as in dictionary attack we provide a dictionary i.e. list of words(can be letters, characters and also their combinations) from which the target system is penetrated with. **Brute-force** attacks being exhaustive will ensure that you'll get the field data(password filed, username, etc.), but as it is exhaustive; the time taken will vary(will be enormous for secured passwords). On the other hand, **dictionary attacks** are selective so, it may provide false positives but it is fast. So, practically we prefer dictionary attacks rather than brute-force.
 
 # Creating our own dictionary with crunch
 So before we begin launching attack with hydra, we must be ready with our dictionary of passwords which we are going to use. Although we can use the dictionaries which are already present on the internet([**my favorite repo**](https://github.com/danielmiessler/SecLists)); but in case you want to be more specific with the target you might require to create your own. There is a very handy tool called [**_crunch_**](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=15&cad=rja&uact=8&ved=2ahUKEwigneWshvnoAhUlzTgGHREsBv4QFjAOegQIDRAR&url=https%3A%2F%2Fwww.hackingtutorials.org%2Fgeneral-tutorials%2Fcrunch-password-list-generation%2F&usg=AOvVaw0BMw909BGMczMnzcP93BFO) which helps in doing this task for us.
@@ -43,7 +43,7 @@ crunch: 100% completed generating output
 There are however numerous options of creating wordlists using crunch. You can explore all the options to get the better insight. I presume you already know **how to man any tool in linux** :thinking:[man crunch].
 
 # Guessing Login password Using a wordlist attack with Hydra:
-Now, that our dictionary is ready next thing to do is to launch the wordlist attack. The tool which we are going to use is Hydra(as evident in the blog title obviously:sweat_smile:). Hydra is a very simple tool to use but in the contrary very powerful and efficient in launching bruteforce and dictionary attacks on almost any authentication services(like routers, web applications, etc.) which I can think of.
+Now, that our dictionary is ready next thing to do is to launch the wordlist attack. The tool which we are going to use is Hydra(as evident in the blog title obviously:sweat_smile:). Hydra is a very simple tool to use but in the contrary very powerful and efficient in launching brute-force and dictionary attacks on almost any authentication services(like routers, web applications, etc.) which I can think of.
 
 Using the tool is simple. Fire up the terminal and type the command below:
 
@@ -51,8 +51,8 @@ Using the tool is simple. Fire up the terminal and type the command below:
 #### Command overview:
 * **_hydra_** - Name of the tool
 * **_IP_** - IP address of the target website (I presume you can **convert the domain names to ip addresses**:thinking:[dig +short www.example.com]) 
-* **-L** - List of usernames to bruteforce the target. Use -l for giving just one user.
-* **-P** - List of passwords to bruteforce the target. Use -p for providing one password.
+* **-L** - List of usernames to brute-force the target. Use -l for giving just one user.
+* **-P** - List of passwords to brute-force the target. Use -p for providing one password.
 * **service** - Providing the type of service you are attacking. This is the most tricky part of the command but is very simple once you get the understanding.
 
 Let us see it in action using an example. I am using [**metasploitable**](https://information.rapid7.com/download-metasploitable-2017.html) machine to demonstrate this example. The application name is **dvwa**.
