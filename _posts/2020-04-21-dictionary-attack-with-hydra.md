@@ -99,7 +99,7 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2020-04-21 16:16:
 Bingo:nerd_face:, we found the password for the username **admin** i.e. **a11bdd44**. 
 
 Give these tools a try and explore various other features and options available for these tools. Keep hacking for good and keep growing always.
-
+{% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}
 
 
 
