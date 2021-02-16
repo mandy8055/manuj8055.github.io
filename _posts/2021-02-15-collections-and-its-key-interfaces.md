@@ -13,11 +13,17 @@ comments: true
 ---
 
 # Collections and their requirement
+
 ##### Collections
+
 If we want to represent a group of individual objects as a single entity then we should go for collection.
+
 ##### Collection Framework
+
 It contains several classes and interfaces which can be used to represent a group of individual objects as a single entity.
+
 ##### Why Collections came to picture at the first place?
+
 Initially, when we need to represent multiple homogenous values then we defined multiple variables. However, this practice was not desirable at all because it degraded the readability of code thereby deteriorating the norms of programming. Then we came up with the idea of **Arrays.** *An array is an indexed collection of fixed number of homogeneous data elements.* The main advantage of arrays is we can represent multiple homogenous values by using single variable which in turn improved the readability of the code. There were limitations with arrays too which eventually led to the requirement of **Collections.**
 
 ##### Difference between arrays and Collections
@@ -43,36 +49,47 @@ Initially, when we need to represent multiple homogenous values then we defined 
 - NavigableMap
 
 ### Collection(I)
+
 - If we want to represent a group of individual objects as a single entity, then we should go for Collection.
 - Collection interfaces define the most common methods which are applicable for any collection object.
 - In general, Collection interface is considered as **root** interface of collection framework.
 - There is no concrete class which implements Collection interface directly.
 
 ##### Difference between Collection and Collections
+
 Collection is an **interface.** If we want to represent a group of individual objects as a single entity then we should go for Collection.
 Collections is a **utility class** present in <mark style="background-color: yellow">java.util package</mark> to define several utility methods for collection objects (like sorting, searching,etc).
+
 ### List
+
 - It is the child interface of Collection. 
 - If we want to represent a group of individual objects as a single entity where <mark style="background-color: yellow">duplicates are allowed and insertion order must be preserved</mark> then we should go for List.
+
 ### Set
+
 - It is the child interface of Collection.
 - If we want to represent a group of individual objects as a single entity where <mark style="background-color: yellow">duplicates are not allowed and insertion order not required to preserve</mark> then we go for Set interface.
+
 ### SortedSet
+
 - It is the child interface of Set.
 - If we want to represent a group of individual objects as a single entity where duplicates are not allowed and all objects should be inserted according to **some sorting order** then we should go for SortedSet.
+
 ### NavigableSet
+
 1.	It is the child interface of SortedSet.
 2.	It contains several methods for Navigation purposes.
 3.	The implementation class for NavigableSet is _**TreeSet.**_
 
-##### Differences between List and Set
+    ##### Differences between List and Set
 
-|List|Set|
-|---|---|
-| 1. Duplicates are allowed. | 1. Duplicates are not allowed. |
-| 2. Insertion order is preserved. | 2. Insertion order is not preserved. |
+    |List|Set|
+    |---|---|
+    | 1. Duplicates are allowed. | 1. Duplicates are not allowed. |
+    | 2. Insertion order is preserved. | 2. Insertion order is not preserved. |
 
 ### Queue
+
 - It is the child interface of Collection.
 - If we want to represent a group of individual objects prior to processing then we should go for Queue.
 - Usually Queue follows **First In First Out(FIFO)** order but based on our requirement we can implement our own priority order also.
