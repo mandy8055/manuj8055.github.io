@@ -28,13 +28,13 @@ Initially, when we need to represent multiple homogenous values then we defined 
 
 ##### Difference between arrays and Collections
 
-|**Arrays**|**Collections**|
-| --- | --- |
-| 1. Fixed in size.| 1. Growable in size |
-| 2. With respect to performance related to memory; arrays are not recommended to use. | 2. With respect to performance related to memory; Collections are highly recommended to use. |
-| 3. With respect to temporal performance; arrays are highly recommended to use. | 3. With respect to temporal performance; Collections are not [*favorable*](https://javarevisited.blogspot.com/2016/01/9-difference-between-array-vs-arraylist-in-java.html#axzz6mb6W7wUI) to be used. |
-| 4. Arrays can hold only homogeneous data elements.  | 4. Collections can hold both homogeneous and heterogeneous data elements.                                                                                                                             |
-| 5. Arrays can hold both primitives and objects.                                      | 5. Collections can hold only objects but not primitives.|
+| **Arrays**                                                                           | **Collections**                                                                                                                                                                                       |
+| ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. Fixed in size.                                                                    | 1. Growable in size                                                                                                                                                                                   |
+| 2. With respect to performance related to memory; arrays are not recommended to use. | 2. With respect to performance related to memory; Collections are highly recommended to use.                                                                                                          |
+| 3. With respect to temporal performance; arrays are highly recommended to use.       | 3. With respect to temporal performance; Collections are not [*favorable*](https://javarevisited.blogspot.com/2016/01/9-difference-between-array-vs-arraylist-in-java.html#axzz6mb6W7wUI) to be used. |
+| 4. Arrays can hold only homogeneous data elements.                                   | 4. Collections can hold both homogeneous and heterogeneous data elements.                                                                                                                             |
+| 5. Arrays can hold both primitives and objects.                                      | 5. Collections can hold only objects but not primitives.                                                                                                                                              |
 
 ## 9 Key interfaces of Collections framework
 
@@ -48,7 +48,7 @@ Initially, when we need to represent multiple homogenous values then we defined 
 - SortedMap
 - NavigableMap
 
-### Collection(I)
+### Collection
 
 - If we want to represent a group of individual objects as a single entity, then we should go for Collection.
 - Collection interfaces define the most common methods which are applicable for any collection object.
@@ -83,9 +83,9 @@ Collections is a **utility class** present in <mark style="background-color: yel
 
     ##### Differences between List and Set
 
-    |List|Set|
-    |---|---|
-    | 1. Duplicates are allowed. | 1. Duplicates are not allowed. |
+    | List                             | Set                                  |
+    | -------------------------------- | ------------------------------------ |
+    | 1. Duplicates are allowed.       | 1. Duplicates are not allowed.       |
     | 2. Insertion order is preserved. | 2. Insertion order is not preserved. |
 
 ### Queue
@@ -98,7 +98,32 @@ Below image shows the gist of the above interfaces.
 
 {% include elements/figure.html image="https://mandy8055.github.io/assets/2021-02-16-collections-1.png" caption="Collections-1" %}
 
-
 **NOTE: All the above interfaces (Collection, List, Set, SortedSet, NavigableSet and Queue) meant for representing a group of individual objects.** 
+
+### Map
+
+- Map is not the child interface of Collection.
+- If we want to represent a group of objects as key-value pairs then we should go for Map.
+- Both key and value are objects only.
+- Duplicate keys are not allowed but values can be duplicated.
+
+### SortedMap
+
+- It is the child interface of map.
+- If we want to represent a group of key-value pairs according to <mark style="background-color: yellow">some sorting order of keys</mark>; then we should go for SortedMap.
+- In Sorted map the sorting should be based on key but not based on value.
+
+### NavigableMap
+
+- It is the child interface of SortedMap.
+- It defines several methods for navigation purposes.
+
+
+
+
+
+
+
+
 
 {% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}
