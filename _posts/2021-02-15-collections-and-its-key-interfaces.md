@@ -12,7 +12,7 @@ comments: true
     
 ---
 
-# Collections and their requirement
+## Collections and their requirement
 
 ##### Collections
 
@@ -36,7 +36,7 @@ Initially, when we need to represent multiple homogenous values then we defined 
 | 4. Arrays can hold only homogeneous data elements.  | 4. Collections can hold both homogeneous and heterogeneous data elements.                                                                                                                             |
 | 5. Arrays can hold both primitives and objects.                                      | 5. Collections can hold only objects but not primitives.|
 
-# 9 Key interfaces of Collections framework
+## 9 Key interfaces of Collections framework
 
 - Collection
 - List
