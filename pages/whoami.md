@@ -8,9 +8,8 @@ weight: 3
 # **About Me**
 
 Hi I am **{{ site.author.name }}** :cowboy_hat_face:,<br>
-I work under the acronym "mandy8055" across the virtual world. A student with insatiable desire to learn, jack of all trades but master of none, true patriot, motivator in the morning, fitness freak in the evening and programmer-cum-developer in night. I like to learn languages also therefore I learnt Italian. You can catch me on github, stack overflow and Hackerearth with stellar reputations(Of course if you like). I always like to help  people who are in need and therefore feel free to share your thoughts and opinions about virtual world. One liner from me to describe myself:
+I work under the acronym "mandy8055" across the virtual world. A student with insatiable desire to learn, jack of all trades but master of none, true patriot, motivator in the morning, fitness freak in the evening and programmer-cum-developer in night. I enjoy working on new technology and challenging problem statements. I love helping people solve their problem on github and stackoverflow.
 
-<blockquote>Well, An unwanted object first discovered in India in 1996 and now trying to discover itself.</blockquote>
 
  
 <!-- <div class="row">
@@ -34,7 +33,7 @@ I work under the acronym "mandy8055" across the virtual world. A student with in
 - Linux
 - MySQL
 - Machine Learning
-- React-redux
+- Flutter
 - Android Studio
 
 <!-- ## **Internships**

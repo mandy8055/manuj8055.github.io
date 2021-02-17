@@ -9,7 +9,7 @@ comments: true
 
 <a class="text-center" href="https://feedburner.google.com/fb/a/mailverify?uri=Mandy8055&amp;loc=en_US" onclick="window.open(this.href, 'subscribe',
     'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Subscribe for New Posts</a>
-    
+
 ---
 
 ## Collections and their requirement
@@ -55,6 +55,23 @@ Initially, when we need to represent multiple homogenous values then we defined 
 - In general, Collection interface is considered as **root** interface of collection framework.
 - There is no concrete class which implements Collection interface directly.
 
+```java
+1.	boolean add(Object o) // To add a single object.
+2.	boolean addAll(Collection c) // To add multiple objects. 
+// To remove
+3.	boolean remove(Object o) // To remove a single object.
+4.	boolean removeAll(Collection c) // To remove multiple(group of) objects.
+5.	void clear() // To remove all the objects inside the Collection.
+6.	boolean retainAll(Collection c) // To remove all objects from the main collection except c.
+// Special Methods
+7.	boolean contains(Object obj) // whether the object is present in the main Collection.
+8.	boolean containsAll(Collection c) // whether group of objects are present in the main Collection.
+9.	boolean isEmpty() // Whether the main collection is empty.
+10.	int size() // size of collection.
+11.	Object[] toArray() // Convert the collection to array.
+12.	Iterator iterator() // default cursor for collections.
+```
+
 ##### Difference between Collection and Collections
 
 Collection is an **interface.** If we want to represent a group of individual objects as a single entity then we should go for Collection.
@@ -64,6 +81,19 @@ Collections is a **utility class** present in <mark style="background-color: yel
 
 - It is the child interface of Collection. 
 - If we want to represent a group of individual objects as a single entity where <mark style="background-color: yellow">duplicates are allowed and insertion order must be preserved</mark> then we should go for List.
+- We can preserve insertion order via **index** and we can differentiate duplicate objects by using index, hence index will play very important role in list.
+
+```java
+//List-specific methods
+void add(int i, Object o) // Add object o at index i.
+boolean addAll(int i, Collection c) // Add c from i onwards.
+Object get(int i) // Get object at index i
+Object remove(int i) // Remove object at index i.
+Object set(int i, Object newOb) // to replace the element present at specified index with provided object and returns old object. 
+int indexOf(Object o) // Returns index of first occurrence of o.
+int lastIndexOf(Object o) // Returns index of last occurrence of o.
+ListIterator listIterator() // List-specific cursor to get list objects one by one.
+```
 
 ### Set
 
@@ -98,7 +128,9 @@ Below image shows the gist of the above interfaces.
 
 {% include elements/figure.html image="https://mandy8055.github.io/assets/2021-02-16-collections-1.png" caption="Collections-1" %}
 
-**NOTE: All the above interfaces (Collection, List, Set, SortedSet, NavigableSet and Queue) meant for representing a group of individual objects.** 
+**NOTE 1: All the above interfaces (Collection, List, Set, SortedSet, NavigableSet and Queue) meant for representing a group of individual objects.**
+
+**Note 2: Usually, we can use Collections to hold and transfer objects from one location to another location(i.e. we use Collections as container). To provide support for this requirement; every Collection class <mark style="background-color: yellow">necessarily implements Serializable and Cloneable interfaces.</mark>**
 
 ### Map
 
@@ -120,7 +152,7 @@ Below image shows the gist of the above interfaces.
 
 {% include elements/figure.html image="https://mandy8055.github.io/assets/2021-02-17-collections-2.png" caption="Collections-2" %}
 
-**Note**: The following are legacy classes and interfaces present in the Collection framework:
+**Note 1**: The following are legacy classes and interfaces present in the Collection framework:
 - Enumeration(I)
 - Dictionary(AC)
 - Vector(C)
