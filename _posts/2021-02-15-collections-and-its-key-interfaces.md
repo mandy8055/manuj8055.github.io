@@ -118,12 +118,14 @@ Below image shows the gist of the above interfaces.
 - It is the child interface of SortedMap.
 - It defines several methods for navigation purposes.
 
+{% include elements/figure.html image="https://mandy8055.github.io/assets/2021-02-17-collections-2.png" caption="Collections-2" %}
 
-
-
-
-
-
-
+**Note**: The following are legacy classes and interfaces present in the Collection framework:
+- Enumeration(I)
+- Dictionary(AC)
+- Vector(C)
+- Stack(C)
+- Hashtable(C)
+- Properties(C)
 
 {% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}
