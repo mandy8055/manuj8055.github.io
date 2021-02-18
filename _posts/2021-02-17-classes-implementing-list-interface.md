@@ -228,7 +228,7 @@ public class VectorDemo1 {
 #### Stack
 
 - It is the child class of <code>Vector</code>.
-- It is a specially designed class for **Last In First Order(LIFO).**
+- It is a specially designed class for **Last In First Out(LIFO)** order.
 
 ##### Stack-specific methods
 
