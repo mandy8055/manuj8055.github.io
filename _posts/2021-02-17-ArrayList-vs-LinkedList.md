@@ -1,9 +1,9 @@
 ---
-title: ArrayList and LinkedList classes in java
+title: Important classes implementing List interface in java
 tags: [Core Java, Collections]
 style:
 color:
-description: A brief note on ArrayList and LinkedList classes.
+description: A brief note on key classes which implement List interface.
 comments: true
 ---
 
@@ -159,5 +159,104 @@ public class LinkedListDemo {
     }
 }
 ```
+
+## Vector
+
+- The underlying data structure is **resizable/growable array.**
+- Insertion order is preserved.
+- Duplicates are allowed.
+- Heterogeneous objects are allowed.
+- **Null insertion** is possible.
+- It implements <code>Serializable</code>, <code>Cloneable</code> and <code>RandomAccess interfaces</code>.
+- Every method present in the <code>Vector</code> is _**synchronized**_ and hence <code>Vector</code> object is [thread-safe](https://dzone.com/articles/what-does-thread-safety-mean-in-java#:~:text=Conclusion-,Thread%20safety%20in%20Java%20means%20that%20the%20methods%20of%20a,we%20call%20the%20quiescent%20method.).
+
+#### Constructors
+
+```java
+Vector v = new Vector();
+```
+- The above initialization creates an empty <code>Vector</code> object with <mark style="background-color: azure">default initial capacity 10.</mark>
+- Once vector reaches its, max-capacity, then a new Vector object will be created with **<mark style="background-color: yellow">new_capacity = current_capacity * 2.</mark>**
+
+```java
+Vector v = new Vector(int initialCapacity);
+```
+- The above initialization creates an empty <code>Vector</code> object with specified initial capacity.
+
+```java
+Vector v = new Vector(int initialCapacity, int incrementalCapacity);
+```
+
+```java
+Vector v = new Vector(Collection c);
+```
+- The above initialization creates an equivalent <code>Vector</code> object for the given <code>Collection</code> c. This constructor is meant for inter-conversion between <code>Collection</code> objects.
+
+#### Vector-specific methods
+
+```java
+void addElement(Object o);
+boolean removeElement(Object o);
+void removeElementAt(int index);
+void removeAllElements();
+int size();
+int capacity();
+Enumeration elements();
+```
+
+#### Demo Implementation
+
+```java
+import java.util.*;
+public class VectorDemo1 {
+    public static void main(String[] args){
+        Vector v = new Vector(); // Warning comes because of lack of type safety. Use generics
+//        Vector v = new Vector(10, 5);
+//        Vector v = new Vector(24);
+        System.out.println(v.capacity());
+        for(int i = 1; i <= 10; i++){
+            v.addElement(i); // auto-boxing will be performed automatically.
+        }
+        System.out.println(v.capacity());
+        v.add("A");
+        System.out.println(v.capacity());
+        System.out.println(v);
+    }
+}
+```
+
+#### Stack
+
+- It is the child class of <code>Vector</code>.
+- It is a specially designed class for **Last In First Order(LIFO).**
+
+##### Stack-specific methods
+
+```java
+Object push(Object o);
+Object pop();
+Object peek();
+boolean empty();
+int search(Object o); // returns the offset of o if o is present inside the stack else returns -1. 
+```
+
+##### Implementation Demo
+
+```java
+import java.util.Stack;
+public class StackDemo {
+    public static void main(String[] args){
+        Stack s = new Stack();
+        s.push("A");
+        s.push("B");
+        s.push("C");
+        System.out.println(s);
+        System.out.println(s.search("A"));
+        System.out.println(s.search("Z"));
+    }
+}
+```
+
+
 
 {% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}
