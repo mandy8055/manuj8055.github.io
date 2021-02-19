@@ -64,7 +64,7 @@ public class ArrayListDemo {
 
 **Note 1: <code>ArrayList</code> and <code>Vector</code> classes <mark style="background-color: yellow">implements <code>RandomAccess</code> interface</mark>, so that any random element we can access with the same speed.**
 
-**Note 2: <code>RandomAccess</code> interface is present in <code>java.util</code> package and it doesn't contain any methods. It is a <mark style="background-color: yellow">marker interface.</mark>, where required ability will be provided automatically by the JVM.**
+**Note 2: <code>RandomAccess</code> interface is present in <code>java.util</code> package and it doesn't contain any methods. It is a [marker interface.](https://javarevisited.blogspot.com/2012/01/what-is-marker-interfaces-in-java-and.html), where required ability will be provided automatically by the JVM.**
 
 ##### Demo Implementation
 
