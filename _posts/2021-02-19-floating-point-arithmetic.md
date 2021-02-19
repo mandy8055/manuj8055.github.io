@@ -16,7 +16,7 @@ Generally we have two types of data formats:
 - Fixed point data formats
 - Floating point data formats
 
-The below flowchart demonstrate the same in brief:
+The below flowchart demonstrates the same in brief:
 
 {% include elements/figure.html image="https://mandy8055.github.io/assets/2021-02-19-floating-point-1.png" caption="Data Representation and various formats" %}
 
@@ -32,7 +32,7 @@ The below flowchart demonstrate the same in brief:
 
     $\pm validDigit.fraction \times Base^{\pm exponent}$
 
-- In the computer system, data is always stored in the form of binary therefore **Base is 2 by default.** Valid bit is becomes implicit i.e. 1.<mark style="background-color: azure">Why:thinking:?because binary number has only 0's and 1's. Also, 0 is not considered a self-weight digit in any radix format.</mark> The reason for discussing this point is that since _**validDigit**_ and _**Base**_ is implicit, we do not need to waste the memory space for them.
+- In the computer system, data is always stored in the form of binary therefore **Base is 2 by default.** Valid bit becomes **implicit** i.e. 1.<mark style="background-color: azure">Why:thinking:?because binary number has only 0's and 1's. Also, 0 is not considered a self-weight digit in any radix format.</mark> The reason for discussing this point is that since _**validDigit**_ and _**Base**_ is implicit, we do not need to waste the memory space to store them.
 - Mantissa alignment process is used in the floating point format to adjust the radix point for the given format and thus converting a de-normalized value to normalized one. In this process, right alignment increments the exponent and left alignment decrements the exponent. For example;
 
 {% include elements/figure.html image="https://mandy8055.github.io/assets/2021-02-19-floating-point-4.png" caption="Converting de-normalized value to normalized one" %}
