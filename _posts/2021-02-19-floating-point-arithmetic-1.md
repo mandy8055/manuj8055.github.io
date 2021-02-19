@@ -52,7 +52,7 @@ Floating point data is stored in the memory with three fields of information:
   
   1. **Sign field** - It used to represent the sign of a data. 0 for positive and 1 for negative.
   2. **Biased Exponent**:
-      *  In memory, exponent is stored in a **biased format** rather than the signed format(2's complement) because <mark style="background-color: yellow">Most Significant bit(MSB) is already reserved for the mantissa sign</mark>, therefore2's complement exponent is not possible to represent the negative exponent.
+      *  In memory, exponent is stored in a **biased format** rather than the signed format(2's complement) because <mark style="background-color: yellow">Most Significant bit(MSB) is already reserved for the mantissa sign</mark>, therefore 2's complement exponent is not possible to represent the negative exponent.
       *  Generally,
         
             ```BIASED EXPONENT = ACTUAL EXPONENT + BIAS```
