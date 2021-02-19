@@ -42,18 +42,16 @@ The below flowchart demonstrate the same in brief:
 
 ## IEEE formats
 
-1. According to IEEE standard 754; there are two kinds formats present:
-  - Single Precision(32 bit) format
+1. According to **IEEE standard 754**; there are two kinds formats present:
 
 {% include elements/figure.html image="https://mandy8055.github.io/assets/2021-02-19-floating-point-2.png" caption="Single Precision format" %}
 
-  - Double Precision(64 bit) format
-
 {% include elements/figure.html image="https://mandy8055.github.io/assets/2021-02-19-floating-point-3.png" caption="Double precision format" %}
 
-1. Floating point data is stored in the memory with three fields of information
-   * **Sign field** - It used to represent the sign of a data. 0 for positive and 1 for negative.
-   * **Biased Exponent**:
+Floating point data is stored in the memory with three fields of information:
+  
+  1. **Sign field** - It used to represent the sign of a data. 0 for positive and 1 for negative.
+  2. **Biased Exponent**:
       *  In memory, exponent is stored in a **biased format** rather than the signed format(2's complement) because <mark style="background-color: yellow">Most Significant bit(MSB) is already reserved for the mantissa sign</mark>, therefore2's complement exponent is not possible to represent the negative exponent.
       *  Generally,
         
@@ -74,7 +72,7 @@ The below flowchart demonstrate the same in brief:
       * **ExcessBias** is another type of Bias where the Bias chosen is the center of the exponent range i.e.
   
          $\frac{2^n}{2}, n = BEFieldSize$
-   * **Mantissa Field**: It is used to represent the fraction.<mark style="background-color: azure">In memory, fraction is always stored in the normalized mantissa format. i.e. <code>1.bbbbb</code> where b is either 0 or 1.</mark>
+  3. **Mantissa Field**: It is used to represent the fraction.<mark style="background-color: azure">In memory, fraction is always stored in the normalized mantissa format. i.e. <code>1.bbbbb</code> where b is either 0 or 1.</mark>
 
 In the next post, I'll try to share my learning on range of floating point number, special values used in floating point numbers and overflow and underflow conditions.
 
