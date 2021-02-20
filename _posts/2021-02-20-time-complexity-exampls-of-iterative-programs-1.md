@@ -10,7 +10,7 @@ comments: true
 
 ## Brief primer on Time Complexity
 
-Whenever we try to write the solution for any problem statement, it is very important to analyse how much time the code takes to execute on the computer system and how much amount of memory of the system it is consuming. One thing to note here is that we are not always interested in finding the exact amount of time or memory **but the approximation**. This is the reason we normally talk about asymptotic analysis and the math behind them.
+Whenever we try to write the solution for any problem statement, it is very important to analyse how much time the code takes to execute on the computer system and how much amount of memory of the system it is consuming. One thing to note here is that we are not always interested in finding the exact amount of time or memory **but the approximation**. This is the reason we normally talk about asymptotic analysis and the math behind them whenever we discuss performance of some code or algorithm.
 
 #### Asymptotic Notations
 
