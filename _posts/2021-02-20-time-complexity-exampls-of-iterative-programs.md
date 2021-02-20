@@ -24,7 +24,7 @@ Whenever we try to write the solution for any problem statement, it is very impo
 
 **Note 2:** We generally discuss about worst case complexity, therefore **Big O** is mostly used to report time and space complexities.
 
-## Time complexity of Iterative programs
+## Major time complexity classes for Iterative programs
 
 ### 1. $O(1)$ time complexity
 
@@ -163,7 +163,7 @@ public static void main(String[] args){
 
 **Some more examples:**
 
-**Example 1: Loop executes $\log_{60}n$ times**
+**Example 1: Loop executes <mark style="background-color: azure">$\log_{60}n$ times</mark>:**
 
 ```java
 public static void main(String[] args){
@@ -176,7 +176,7 @@ public static void main(String[] args){
 }
 ```
 
-**Example 2: Loop executes $\log_{6}n$ times**
+**Example 2: Loop executes <mark style="background-color: azure">$\log_{6}n$ times</mark>:**
 
 ```java
 public static void main(String[] args){
@@ -190,7 +190,7 @@ public static void main(String[] args){
 }
 ```
 
-**Example 3: CAVEAT for infinite loop**
+**Example 3: CAVEAT for <mark style="background-color: azure">infinite loop</mark>:**
 ```java
 public static void main(String[] args){
     int i = n;
@@ -231,7 +231,7 @@ public static void main(String[] args){
 
 **One more example:**
 
-**Example 1: Loop executes $(\log_{2}\log_{3} n)$ times:**
+**Example 1: Loop executes <mark style="background-color: azure">$(\log_{2}\log_{3} n)$ times</mark>:**
 
 ```java
 public static void main(String[] args){
@@ -239,16 +239,16 @@ public static void main(String[] args){
     while(i < n){
         i = (int)Math.pow(i, 4);
         i = (int)Math.sqrt(i);
-        // The above two statements combined makes the value of counter variable to increment as i^2.
+        // The above two statements combined make the value of counter variable to increment as i^2.
     }
 }
 ```
 
 ### 5. $O(n^c)$ time complexity
 
-The nested **independent** loops generally incur the time complexity as $O(n^c)$ where c is some constant. By independent I mean that the counter or loop variables for the outer as well as the inner loop share no relationship with each other. Let us see some examples to get the clear idea.
+The nested **independent** loops generally incur the time complexity as $O(n^c)$ where **c is some constant**. By independent I mean that the counter or loop variables for the outer as well as the inner loop share no relationship with each other. Let us see some examples to get the clear idea.
 
-**Example 1: Notice there is no relationship between outer and inner loop counter variables <code>i</code> and <code>j</code>. The complexity of the below code snippet becomes $O(n^2)$.**
+**Example 1: Notice there is no relationship between outer and inner loop counter variables <code>i</code> and <code>j</code>. The <mark style="background-color: azure">complexity of the below code snippet becomes $O(n^2)$</mark>:**
 
 ```java
 public static void main(String[] args){
@@ -259,7 +259,7 @@ public static void main(String[] args){
 }
 ```
 
-**Example 2: A slight variation. The complexity becomes $O(n^3)$.**
+**Example 2: A slight variation. The <mark style="background-color: azure">complexity becomes $O(n^3)$</mark>:**
 
 ```java
 public static void main(String[] args){
@@ -270,7 +270,7 @@ public static void main(String[] args){
 }
 ```
 
-**Example 3: To calculate the time complexity of below code snippet convert the in terms of n. <mark style="background-color: yellow">The time complexity becomes $O(n^{3/2})$.</mark>**
+**Example 3: To calculate the time complexity of below code snippet convert the loop condition in terms of n. <mark style="background-color: yellow">The time complexity becomes $O(n^{3/2})$.</mark>**
 
 ```java
 public static void main(String[] args){
