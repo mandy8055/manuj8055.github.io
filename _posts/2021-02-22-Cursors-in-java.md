@@ -173,7 +173,7 @@ The most powerful `Cursor` is `ListIterator` but its limitation is it is applica
 | 6. **Important Methods**        | [2 Methods](#methods-of-enumeration)         | [3 methods](#methods-of-iterator)                  | [9 methods](#methods-of-listiterator)     |
 
 #### Internal Implementation of Cursors:
-This is one of the most disturbing topic which I came through when I was preparing for my java certification. I was thinking every time we want to define a `Cursor` on some `Collection` object, I would create an object like `Enumeration e` or `Iterator itr`, etc. but then I realized how can we even think of creating an object for Interface since, `Enumeration`, `Iterator` and `ListIterator` are Interfaces.
+This is one of the most disturbing topic which I came through when I was preparing for my java certification. I was thinking every time we want to define a `Cursor` on some `Collection` object, I would create an object like `Enumeration e` or `Iterator itr`, etc. but then I realized how can we even think of creating an object for Interface:dizzy_face: since, `Enumeration`, `Iterator` and `ListIterator` are Interfaces.
 
 Finally, I got the solution of this problem by running the below program.
 
