@@ -199,7 +199,7 @@ public static void main(String[] args){
 - `String` class and all **wrapper** classes already implement `Comparable` interface but `StringBuffer` and `StringBuilder` classes doesn't implement `Comparable` interface. That is the reason we got `ClassCastException` in the above demonstration.
 - If we are depending on default natural sorting order then while adding objects into the  `TreeSet`, **JVM** calls `compareTo()` method.
 
-**Note: If default natural sorting order is not available then we can go for customized sorting by using `Comparator` interface i.e. <mark style="background-color: yellow">`Comparable` meant for default natural sorting order whereas `Comparator` meant for customized sorting order.</mark>**
+**Note: If default natural sorting order is not available then we can go for customized sorting by using `Comparator` interface i.e. <mark style="background-color: yellow"><code>Comparable</code> meant for default natural sorting order whereas <code>Comparator</code> meant for customized sorting order.</mark>**
 
 In the next blog post I'll share my learning on `Comparator` interface and its usage.
 
