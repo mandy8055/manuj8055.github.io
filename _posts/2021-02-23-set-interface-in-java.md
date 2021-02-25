@@ -126,4 +126,83 @@ System.out.println(comparator()); // null since the given Set is in default natu
 ```
 In the next blog I'll share my learnings on `TreeSet` which is one of the most important class which implements `SortedSet` interface and after _java 1.6v_, also [implements](https://mandy8055.github.io/assets/2021-02-16-collections-1.png) `NavigableSet` interface.
 
+### 4. TreeSet
+
+- The underlying data structure is **Balanced tree.**
+- Duplicate objects are not allowed.
+- Insertion order is not preserved.
+- Heterogeneous objects are **not allowed. If we are using heterogeneous objects, we will get `ClassCastException`.**
+- `null` insertion is possible only once.
+- `TreeSet` implements `Serializable` and `Cloneable` but not `RandomAccess` interfaces.
+- All the objects will be inserted based on some sorting order. It may be default natural sorting order or customized sorting order.
+
+#### Constructors
+
+##### 1.
+```java
+TreeSet t = new TreeSet();
+```
+- The above definition creates an empty `TreeSet` object where the elements will be inserted according to default natural sorting order.
+
+##### 2.
+```java
+TreeSet t = new TreeSet(Comparator c);
+```
+- The above definition creates an empty `TreeSet` object where the elements will be inserted according to customized sorting order specified by comparator object `c`.
+
+##### 3.
+```java
+TreeSet t = new TreeSet(Collection c);
+```
+
+#### 4.
+```java
+TreeSet t = new TreeSet(SortedSet s);
+```
+
+#### Implementation demo 1:
+
+```java
+public static void main(String[] args){
+        TreeSet treeSet = new TreeSet();
+        treeSet.add("A");
+        treeSet.add("a");
+        treeSet.add("B");
+        treeSet.add("Z");
+        treeSet.add("L");
+        // treeSet.add(10); --> results in ClassCastException
+        // treeSet.add(null);
+        System.out.println(treeSet); // [A, B, L, Z, a]
+    }
+```
+
+##### Null Acceptance in TreeSet
+- For **non-empty** `TreeSet` if we are trying to insert `null`, then we will get **`NullPointerException`.**
+- For **empty** `TreeSet` as the first element `null` is allowed but after inserting that `null` if we are trying to insert any other element, then we will get the runtime exception i.e. `NullPointerException`.
+
+**NOTE: Till java _1.6 version_, `null` is allowed as the first element to the empty `TreeSet` but from _1.7 version_ onwards `null` is not allowed even as the first element i.e. '`null` is not applicable for `TreeSet` from _1.7 version_ onwards'.**
+
+#### Implementation demo 2:
+
+```java
+public static void main(String[] args){
+    TreeSet treeSet = new TreeSet();
+    treeSet.add(new StringBuffer("A"));
+    treeSet.add(new StringBuffer("L"));
+    treeSet.add(new StringBuffer("Z"));
+    treeSet.add(new StringBuffer("B"));
+    System.out.println(treeSet); // --> Gives ClassCastException
+}
+```
+
+- If we are depending on default natural sorting order, the objects should be homogeneous and **comparable** compulsorily otherwise, we will get runtime exception i.e. `ClassCastException`.
+- An object is said to be **comparable** if and only if corresponding class implements [java.lang.Comparable](https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html) interface.
+- `String` class and all **wrapper** classes already implement `Comparable` interface but `StringBuffer` and `StringBuilder` classes doesn't implement `Comparable` interface. That is the reason we got `ClassCastException` in the above demonstration.
+- If we are depending on default natural sorting order then while adding objects into the  `TreeSet`, **JVM** calls `compareTo()` method.
+
+**Note: If default natural sorting order is not available then we can go for customized sorting by using `Comparator` interface i.e. `Comparable` meant for default natural sorting order whereas `Comparator` meant for customized sorting order.**
+
+In the next blog post I'll share my learning on `Comparator` interface and its usage.
+
+{% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}
 {% include mathjax.html %}
