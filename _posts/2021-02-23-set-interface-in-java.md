@@ -124,7 +124,6 @@ System.out.println(tailSet(106)); // [106, 110, 115, 120]
 System.out.println(subSet(101, 115)); // [101, 104, 106, 110]
 System.out.println(comparator()); // null since the given Set is in default natural order i.e. Ascending. 
 ```
-In the next blog I'll share my learnings on `TreeSet` which is one of the most important class which implements `SortedSet` interface and after _java 1.6v_, also [implements](https://mandy8055.github.io/assets/2021-02-16-collections-1.png) `NavigableSet` interface.
 
 ### 4. TreeSet
 
@@ -200,7 +199,7 @@ public static void main(String[] args){
 - `String` class and all **wrapper** classes already implement `Comparable` interface but `StringBuffer` and `StringBuilder` classes doesn't implement `Comparable` interface. That is the reason we got `ClassCastException` in the above demonstration.
 - If we are depending on default natural sorting order then while adding objects into the  `TreeSet`, **JVM** calls `compareTo()` method.
 
-**Note: If default natural sorting order is not available then we can go for customized sorting by using `Comparator` interface i.e. `Comparable` meant for default natural sorting order whereas `Comparator` meant for customized sorting order.**
+**Note: If default natural sorting order is not available then we can go for customized sorting by using `Comparator` interface i.e. <mark style="background-color: yellow">`Comparable` meant for default natural sorting order whereas `Comparator` meant for customized sorting order.</mark>**
 
 In the next blog post I'll share my learning on `Comparator` interface and its usage.
 
