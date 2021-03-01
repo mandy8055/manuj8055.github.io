@@ -201,6 +201,17 @@ public static void main(String[] args){
 
 **Note: If default natural sorting order is not available then we can go for customized sorting by using `Comparator` interface i.e. <mark style="background-color: yellow"><code>Comparable</code> meant for default natural sorting order whereas <code>Comparator</code> meant for customized sorting order.</mark>**
 
+#### Comparison table of Set implemented classes
+
+| Properties                        | HashSet        | LinkedHashSet              | TreeSet                                                          |
+| --------------------------------- | -------------- | -------------------------- | ---------------------------------------------------------------- |
+| **1. Underlying data structures** | Hash table     | Linked list and Hash table | Balanced binary tree.                                            |
+| **2. Duplicate objects**          | Not allowed    | Not allowed                | Not allowed                                                      |
+| **3. Insertion order**            | Not preserved  | Preserved                  | Not preserved                                                    |
+| **4. Sorting order**              | Not Applicable | Not Applicable             | Applicable                                                       |
+| **5. Heterogenous objects**       | Allowed        | Allowed                    | Not allowed. Special cases allowed when we use `Comparator`      |
+| **6. `null` acceptance**          | Allowed        | Allowed                    | Allowed only in particular [cases](#null-acceptance-in-treeset). |
+
 In the next blog post I'll share my learning on `Comparator` interface and its usage.
 
 {% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}
