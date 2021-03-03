@@ -112,4 +112,84 @@ public class HashMapDemo {
  
 **NOTE: To get the synchronized version of `HashMap` object, we use `Collections.synchronizedMap(hashMap)` method. The return type of the method is a <code>synchronized Map object</code>.**
 
+#### 2. LinkedHashMap
+
+- It is the child class of `HashMap`.
+- It is exactly similar to `HashMap`(including methods and constructors) except the following differences:
+
+| HashMap                                                                       | LinkedHashMap                                                                     |
+| ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| 1. The underlying data structure is **hash table.**                           | The underlying data structure is a combination of **hash table and linked list.** |
+| 2. Insertion order is not preserved and it is based on **hash code** of keys. | Insertion order is preserved.                                                     |
+| 3. Introduced in *1.2 version.*                                               | Introduced in *1.4 version.*                                                      |
+
+**NOTE:** In the above program if we replace `HashMap` with `LinkedHashMap` then, output is `{Mandy=340, John=120, Mike=500, Ikira=1000}` i.e. **insertion order is preserved.**
+
+**Note:** `LinkedHashSet` and `LinkedHashMap` are commonly used for developing **cache-based applications.**
+
+#### 3. IdentityHashMap
+- It is similar to `HashMap`(including methods and constructors) except the following difference:
+  - In the case of normal `HashMap`, **jvm uses `equals()` method** to identify duplicate keys, which is meant for **content comparison**
+  - In the case of `IdentityHashMap`, **jvm uses `==` operator** to identify duplicate keys, which is meant for **reference comparision(address comparison).**
+
+##### Implementation demo:
+
+```java
+import java.util.HashMap;
+import java.util.IdentityHashMap;
+public class IdentityHashMapDemo {
+    public static void main(String[] args){
+        HashMap hashMap = new HashMap();
+        IdentityHashMap identityHashMap = new IdentityHashMap();
+        Integer i1 = new Integer(10);
+        Integer i2 = new Integer(10);
+        hashMap.put(i1, "Cydney");
+        hashMap.put(i2, "Rhonda");
+        System.out.println(hashMap); // {10=Rhonda}
+        identityHashMap.put(i1, "Cydney");
+        identityHashMap.put(i2, "Rhonda");
+        System.out.println(identityHashMap); // {10=Rhonda, 10=Cydney}
+    }
+}
+```
+
+### 4. WeakHashMap
+- It is similar to `HashMap` except the following difference:
+  - In the case of  `HashMap` even though, object doesn't have any reference; it is not eligible for **garbage collection** if it is associated with `HashMap` i.e. `HashMap` dominates **garbage collector**.
+  - In the case of `WeakHashMap`, if object doesn't contain any references; it is eligible for **garbage collection** even though that object is associated with `WeakHashMap` i.e. **garbage collector** dominates `WeakHashMap`.
+
+##### Implementation demo
+```java
+import java.util.HashMap;
+import java.util.WeakHashMap;
+public class WeakHashMapDemo {
+    public static void main(String[] args) throws Exception {
+        HashMap hashMap = new HashMap();
+        WeakHashMap weakHashMap = new WeakHashMap();
+        TempClass tempClass = new TempClass();
+        TempClass tempClass1 = new TempClass();
+        hashMap.put(tempClass, "Axle");
+        System.out.println(hashMap); // {temp=Axle}
+        tempClass = null;
+        System.gc();
+        Thread.sleep(5000);
+        System.out.println(hashMap); // {temp=Axle}
+        weakHashMap.put(tempClass1, "Bose");
+        System.out.println(weakHashMap);// {temp=Bose}
+        tempClass1 = null; 
+        System.gc(); // // finalize() method is called
+        Thread.sleep(5000);
+        System.out.println(weakHashMap); // {}
+    }
+}
+class TempClass{
+    public String toString(){
+        return "tempClass";
+    }
+    public void finalize(){
+        System.out.println("finalize() method is called");
+    }
+}
+```
+
 {% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}
