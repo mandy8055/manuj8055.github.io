@@ -192,4 +192,67 @@ class TempClass{
 }
 ```
 
+### 5. SortedMap
+- It is the child interface of `Map`.
+- If we want to represent a group of objects as a group of key-value pairs according to some sorting order of **keys**, then we should go for `SortedMap`.
+- **Sorting** is based on the key but not value.
+- `SortedMap` defines the following specific methods:
+```java
+// Returns first key of the SortedMap.
+public Object firstKey();
+// Returns last key of the SortedMap.
+public Object lastKey();
+// Returns SortedMap whose keys are less than key
+public SortedMap headMap(Object key);
+// Returns SortedMap whose keys are more than or equal to key.
+public SortedMap tailMap(Object key);
+// Returns SortedMap whose keys are greater than or equal to key1 and less than key2.
+public SortedMap subMap(Object key1, Object key2);
+// Returns Comparator object that describes underlying sorting technique. If we are using default natural sorting order then we will get null.
+public Comparator comparator();
+```
+
+### 6. TreeMap
+- The underlying data structure is **Red-Black tree.**
+- Insertion order is not preserved and it is based on some sorting order of keys.
+- Duplicate keys are not allowed but values can be duplicated.
+- If we're depending on default natural sorting order then, keys should be **homogeneous and comparable** otherwise `ClassCastException` occurs.
+- If we're defining our own sorting logic by using `Comparator` then, keys need not be homogeneous and comparable.
+- Whether we're depending on default natural sorting order or customized sorting order, there are no restrictions for values.
+
+##### null acceptance
+- For **non-empty** `TreeMap` if we are trying to insert `null`, then we will get **`NullPointerException`.**
+- For **empty** `TreeMap` as the first element `null` is allowed but after inserting that `null` if we are trying to insert any other element, then we will get the runtime exception i.e. `NullPointerException`.
+
+**NOTE 1: Till java _1.6 version_, `null` is allowed as the first element to the empty `TreeMap` but from _1.7 version_ onwards `null` is not allowed even as the first element i.e. '`null` is not applicable for `TreeMap` from _1.7 version_ onwards'.**
+
+**NOTE 2: There is no restriction on presence of `null` in values.**
+
+#### Constructors
+
+##### 1.
+```java
+TreeMap t = new TreeMap();
+```
+- The above definition creates an empty `TreeMap` object where the elements will be inserted according to default natural sorting order.
+
+##### 2.
+```java
+TreeMap t = new TreeMap(Comparator c);
+```
+- The above definition creates an empty `TreeMap` object where the elements will be inserted according to customized sorting order specified by comparator object `c`.
+
+##### 3.
+```java
+TreeMap t = new TreeMap(Map map);
+```
+
+#### 4.
+```java
+TreeMap t = new TreeMap(SortedMap sortedMap);
+```
+
+In the next post I'll try to share my learnings on `HashTable` and `NavigableHashMap`.
+
+
 {% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}

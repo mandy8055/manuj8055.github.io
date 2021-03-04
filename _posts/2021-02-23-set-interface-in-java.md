@@ -97,7 +97,7 @@ In the above `HashSet` implementation demo, if we replace `HashSet` with `Linked
 // Returns first element of the SortedSet.
 public Object first();
 // Returns last element of the SortedSet.
-public SortedSet last(Object obj);
+public Object last();
 // Returns SortedSet whose elements are less than obj
 public SortedSet headSet(Object obj);
 // Returns SortedSet whose elements are more than or equal to obj.
