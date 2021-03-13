@@ -109,3 +109,5 @@ class MyComparator8 implements Comparator{
 }
 ```
 There is a support for **double ended queues** in java which is provided by `Dequeue` interface. For further reading please visit [**this**](https://www.geeksforgeeks.org/deque-interface-java-example/) link.
+
+{% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}
