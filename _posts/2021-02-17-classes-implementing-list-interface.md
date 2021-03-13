@@ -256,7 +256,4 @@ public class StackDemo {
     }
 }
 ```
-
-
-
 {% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}
