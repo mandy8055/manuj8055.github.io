@@ -164,7 +164,115 @@ public static void reverse(List list);
 #### reverse() vs reverseOrder()
 We can use `reverse()` method to reverse order of elements of given list whereas we can use `reverseOrder()` method to get reverse `Comparator` object.
 
+## Arrays
+`Arrays` class is an utility class to define several utility methods for array objects.
 
+### Sorting elements of array
+`Arrays` class defines the following `sort()` methods to sort elements of primitive and object type arrays.
+#### 1.
+```java
+public static void sort(primitive[] p); // to sort according to natural sorting order.
+```
+#### 2.
+```java
+public static void sort(Object[] obj); // to sort according to natural sorting order.
+```
+#### 3.
+```java
+public static void sort(Object[] obj, Comparator comparator); // to sort according to customized sorting order.
+```
+
+### Implementation demo
+```java
+import java.util.Arrays;
+import java.util.Comparator;
+public class ArraysSortDemo {
+    public static void main(String[] args){
+        int[] arr = {50, 25, 70, 22, 15, 65};
+        System.out.println("Primitive array before sorting: ");
+        for(int i1 : arr){
+            System.out.print(i1 + " "); // 50 25 70 22 15 65
+        }
+        System.out.println("\nPrimitive array after sorting: ");
+        Arrays.sort(arr);
+        for(int i1 : arr){
+            System.out.print(i1 + " "); // 15 22 25 50 65 70
+        }
+        String[] strArr = {"Rock", "Paper", "Scissor", "Mike", "Rorke"};
+        System.out.println("Object array before sorting: ");
+        for(String s1 : strArr){
+            System.out.print(s1 + ", "); // Rock, Paper, Scissor, Mike, Rorke
+        }
+        System.out.println("\nObject array after sorting: ");
+        Arrays.sort(strArr);
+        for(String s1 : strArr){
+            System.out.print(s1 + ", "); // Mike, Paper, Rock, Rorke, Scissor
+        }
+        System.out.println("\nObjects array after getting sorted in descending order: ");
+        Arrays.sort(strArr, new MyComparator11());
+        for(String s1 : strArr){
+            System.out.print(s1 + ", "); // Scissor, Rorke, Rock, Paper, Mike
+        }
+    }
+}
+class MyComparator11 implements Comparator{
+    @Override
+    public int compare(Object o1, Object o2) {
+        String s1 = o1.toString();
+        String s2 = o2.toString();
+        return s2.compareTo(s1);
+    }
+}
+```
+**NOTE:** We can sort primitive arrays only based on default natural sorting order whereas we can sort object arrays either based default natural sorting order or based on customized sorting order.
+
+### Searching elements of array
+`Arrays` class defines the following `binarySearch()` methods:
+#### 1.
+```java
+public static int binarySearch(primitive[] p, primitive target); // to search for target in primitive array p.
+```
+#### 2.
+```java
+public static int binarySearch(Object[] obj, Object target); // to search for target in Object array p.
+```
+#### 3.
+```java
+public static int binarySearch(Object[] obj, Object target, Comparator comparator); // to search for target in Object array p when the array is sorted according to comparator.
+```
+**Note:** All rules of `Arrays` class `binarySearch()` methods are exactly same as `Collections` class `binarySearch()` methods. 
+
+### Conversion of array to list
+```java
+public static List asList(Object[] arr);
+```
+
+- The `asList()` method will not create an independent `list` object. For the existing object array, we are getting `list` view.
+- By using array reference if we perform any change, then that change will automatically reflected to the list. Similarly, by using list reference if we perform any change, then that change will reflected automatically to the array.
+- By using `list` reference we cannot perform any operation which varies the size otherwise, we will get `UnsupportedOperationException` as runtime exception.
+- By using `list` reference, we're not allowed to replace elements with heterogenous objects otherwise we will get `ArrayStoreException` as runtime exception.
+
+#### Implementation demo
+```java
+import java.util.Arrays;
+import java.util.List;
+public class ArraysAsListDemo {
+    public static void main(String[] args){
+        String[] strArr = {"Mike", "Paper", "Rock"};
+        List list = Arrays.asList(strArr);
+        System.out.println(list); // [Mike, Paper, Rock]
+        strArr[0] = "Bose";
+        System.out.println(list); // [Bose, Paper, Rock]
+        list.set(1, "Jim");
+        for(String str: strArr){
+            System.out.print(str + ", "); // Bose, Jim, Rock,
+        }
+        list.add("John"); // throws UnsupportedOperationsException as runtime exception
+        list.remove(2); // throws UnsupportedOperationsException as runtime exception
+        list.set(2, new Integer(20)); // throws ArrayStoreException as runtime exception
+    }
+}
+```
 
 {% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}
 {% include mathjax.html %}
