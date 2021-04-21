@@ -35,6 +35,9 @@ I work under the acronym "mandy8055" across the virtual world. A student with in
 - Machine Learning
 - Flutter
 - Android Studio
+- git and github
+- node.js
+- API
 
 <!-- ## **Internships**
 <div class="row">
