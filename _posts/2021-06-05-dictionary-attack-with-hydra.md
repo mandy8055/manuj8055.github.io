@@ -12,10 +12,10 @@ comments: true
     
 ---    
 
-This post will help us learn how to create our own dictionary of passwords and then launch atatcks on login forms using the dictionary we created along with the **Kali based tool Hydra**. These days almost all the websites contain authentication forms. Therefore, this tool is very handy when launching brute-force attacks. So, before getting our hands dirty with the tool; let us first polish some of our basics about dictionary and brute-force attacks.
+This post will help us learn how to create our own dictionary of passwords and then launch attacks on login forms using the dictionary we created along with the **Kali based tool Hydra**. These days almost all the websites contain authentication forms. Therefore, this tool is very handy when launching brute-force attacks. So, before getting our hands dirty with the tool; let us first polish some of our basics about dictionary and brute-force attacks.
 
 # Brute-force attack vs Dictionary Attack
-We often use brute-force and dictionary attack interchangeably and it is somewhat right but there is a subtle difference between them. We can think brute-force attack as a **superset** of dictionary attack. Brute-force attacks are exhaustive attacks which tries all the possibilities (viz. letters, characters, special characters, and their combinartions as well) where as in dictionary attack we provide a dictionary i.e. list of words(can be letters, characters and also their combinations) from which the target system is penetrated with. **Brute-force** attacks being exhaustive will ensure that you'll get the field data(password filed, username, etc.), but as it is exhaustive; the time taken will vary(will be enormous for secured passwords). On the other hand, **dictionary attacks** are selective so, it may provide false positives but it is fast. So, practically we prefer dictionary attacks rather than brute-force.
+We often use brute-force and dictionary attack interchangeably and it is somewhat right but there is a subtle difference between them. We can think brute-force attack as a **superset** of dictionary attack. Brute-force attacks are exhaustive attacks which tries all the possibilities (viz. letters, characters, special characters, and their combinations as well) where as in dictionary attack we provide a dictionary i.e. list of words(can be letters, characters and also their combinations) from which the target system is penetrated with. **Brute-force** attacks being exhaustive will ensure that you'll get the field data(password filed, username, etc.), but as it is exhaustive; the time taken will vary(will be enormous for secured passwords). On the other hand, **dictionary attacks** are selective so, it may provide false positives but it is fast. So, practically we prefer dictionary attacks rather than brute-force.
 
 # Creating our own dictionary with crunch
 So before we begin launching attack with hydra, we must be ready with our dictionary of passwords which we are going to use. Although we can use the dictionaries which are already present on the internet([**my favorite repo**](https://github.com/danielmiessler/SecLists)); but in case you want to be more specific with the target you might require to create your own. There is a very handy tool called [**_crunch_**](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=15&cad=rja&uact=8&ved=2ahUKEwigneWshvnoAhUlzTgGHREsBv4QFjAOegQIDRAR&url=https%3A%2F%2Fwww.hackingtutorials.org%2Fgeneral-tutorials%2Fcrunch-password-list-generation%2F&usg=AOvVaw0BMw909BGMczMnzcP93BFO) which helps in doing this task for us.
@@ -47,7 +47,8 @@ Now, that our dictionary is ready next thing to do is to launch the wordlist att
 
 Using the tool is simple. Fire up the terminal and type the command below:
 
-**SYNTAX:** hydra [IP] -L[usernames] -P[password list] [service]
+> hydra [IP] -L[usernames] -P[password list] [service]
+
 #### Command overview:
 * **_hydra_** - Name of the tool
 * **_IP_** - IP address of the target website (I presume you can **convert the domain names to ip addresses**:thinking:[dig +short www.example.com]) 
@@ -61,7 +62,7 @@ Let us see it in action using an example. I am using [**metasploitable**](https:
 
 {% include elements/figure.html image="https://mandy8055.github.io/assets/2020-04-21-dvwa-page.png" caption="Page to exploit" %}
 
-* From the page we have got our **IP address**, the **protocol on which it is running(http)** and **Failure login Message**(_Don't worry!I'll let you know where the fromer two parts will be useful_).
+* From the page we have got our **IP address**, the **protocol on which it is running(http)** and **Failure login Message**(_Don't worry!I'll let you know where the former two parts will be useful_).
 
 * Now the next thing, which we need to do is to inspect the **action type** of the form which this web application is using(I presume you know **how to get the form action type**:thinking:[Right click on the form and click on **_inspect element_**]).By doing this; we came to know about the form type i.e. **POST**. If you'll know the [difference between GET and POST](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=12&cad=rja&uact=8&ved=2ahUKEwj8xJn8tfnoAhVUfisKHQZ1CoQQFjALegQIAhAB&url=https%3A%2F%2Fwww.w3schools.com%2Ftags%2Fref_httpmethods.asp&usg=AOvVaw1Jv4zkrWlgxGHp_1W9ypYB), you'll know that POST requests are hidden. They are not visible in the url.
 
@@ -71,14 +72,14 @@ Let us see it in action using an example. I am using [**metasploitable**](https:
 
 * That's it; we have all the things needed to construct our command for hydra. Now, let us write the full command and understand its **service type** part in detail.
 
-**Command:** hydra 192.168.43.205 -l admin -P dict.txt http-post-form "/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:F=Login failed"
+> hydra 192.168.43.205 -l admin -P dict.txt http-post-form "/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:F=Login failed"
 
 #### Command Overview[The service Part]:
 
 * **_http-post-form_** - It is the name of the service which tells hydra what the web app is using. You can man it to get more info.
 * **_"/dvwa/login.php:username=^USER^&password=^PASS^&login=Login:F=Login Failed"_** - This part which is enclosed in quotes contain three colons. Let us break them down one by one.
     * I<sup>st</sup> part: This part of the colon represents the page where the attack needs to be launched.
-    * II<sup>nd</sup> part: This part of the colon represents the parameters that are passed to dvwa server everytime the user tries to log in(**The reason why we used Burp proxy**).
+    * II<sup>nd</sup> part: This part of the colon represents the parameters that are passed to dvwa server every time the user tries to log in(**The reason why we used Burp proxy**).
     * III<sup>rd</sup> part: This part of the colon shows what is the text that will be visible on the page when login failure(because we used **F** option) occurs.
 
 Finally, fire up the terminal and paste the above command, and you'll see the result below:
