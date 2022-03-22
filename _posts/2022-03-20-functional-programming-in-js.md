@@ -34,7 +34,7 @@ function sayHeyThere(){
 }
 ```
 ## Higher Order functions
-In the above example; the functions **<code>greet()</code>** and **<code>sayHeyThere()</code>** have special terminology i.e. *higher order functions.* These are those functions that <mark style = "background-color: yellow">either take other functions as arguments or return functions or both.</mark>They are called so because instead of working on strings, numbers or booleans; it goes higher and operate on functions. You probably have worked on **<code>map()</code>**, **<code>filter()</code>**, **<code>setTimeout()</code>** and **<code>reduce()</code>**. These are higher order functions since they operate on functions.
+In the above example; the functions **<code>greet()</code>** and **<code>sayHeyThere()</code>** have special terminology i.e. *higher order functions.* These are those functions that <mark style = "background-color: yellow">either take other functions as arguments or return functions or both.</mark>They are called so because instead of working on strings, numbers or booleans; it goes a level higher and operate on functions. You probably have worked on **<code>map()</code>**, **<code>filter()</code>**, **<code>setTimeout()</code>** and **<code>reduce()</code>**. These are higher order functions since they operate on functions.
 
 ## Function composition
 Let us understand the meaning of function composition with a scenario. Consider we're given a string with padded spaces. We have to trim the input, convert the input to lowercase and wrap a **<code><div></code>** around it. One of the may ways would be:
