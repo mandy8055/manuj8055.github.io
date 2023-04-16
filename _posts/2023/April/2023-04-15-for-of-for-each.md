@@ -1,6 +1,6 @@
 ---
 title: for..of vs for..in loops
-tags: [javascript, Objects, Arrays]
+tags: [javascript, es6, Objects, Arrays]
 description: Distinction between for..of and for..in loop and related concepts in javascript
 comments: true
 mathjax: false
@@ -74,7 +74,7 @@ By default, _all properties that you define in an object are enumerable_, but yo
 
 > Can you give an example how will convert an enumerable property to not enumerable one?
 
-n JavaScript, properties that are defined with `Object.defineProperty` method with `enumerable: false` flag or those that are defined on the prototype chain of an object with enumerable: false are not enumerable.
+In JavaScript, properties that are defined with `Object.defineProperty` method with `enumerable: false` flag or those that are defined on the prototype chain of an object with enumerable: false are not enumerable.
 
 ```js
 const obj = {
@@ -125,21 +125,13 @@ propNames.forEach((propName) => {
 
 > "Ojects are not iterable by default but Arrays are". What does this mean?
 
-An iterable object is any object that has a `[Symbol.iterator]` property, which **returns an iterator object.** The iterator object must have a `next()` method that returns an object with `value` and `done` properties.
+Please refer **[this blog](https://mandy8055.github.io/blog/arrays-in-js#what-are-iterables-and-array-like-objects)** for detailed explanation.
 
 > How to find if the object/data-structure is iterable or not?
 
-You can check if an object is iterable or not by using the `Symbol.iterator` property. If an object has a `Symbol.iterator` property, then it is iterable.
+Please refer **[this blog](https://mandy8055.github.io/blog/arrays-in-js#what-are-iterables-and-array-like-objects)** for detailed explanation.
 
-```js
-const array = [1, 2, 3];
-console.log(typeof array[Symbol.iterator]); // "function", so it is iterable
-
-const obj = { a: 1, b: 2, c: 3 };
-console.log(typeof obj[Symbol.iterator]); // "undefined", so it is not iterable
-```
-
-> Can we make an object iterable?\
+> Can we make an object iterable?
 
 Yes, we can make an object iterable by defining a method called `Symbol.iterator` on the object. This method should **return an iterator object** with a `next method` that returns an **object with value and done properties**.
 
