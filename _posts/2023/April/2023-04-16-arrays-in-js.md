@@ -41,26 +41,26 @@ Some of the objects which are both Iterator and Array-like are **NodeList**, **H
 
 There are various ways of creating an Array in javascript. Let's look at some of the most common ways to do so.
 
-1. **Using square brackets notation**: This is the most common way to create an array in JavaScript. It involves enclosing a list of elements in square brackets.
+- **Using square brackets notation**: This is the most common way to create an array in JavaScript. It involves enclosing a list of elements in square brackets.
 
 ```js
 let myArray = [1, 2, 3, 4, 5];
 ```
 
-2. **Using the Array constructor**: You can also create an array using the Array constructor, which takes a comma-separated list of values as arguments. The point to note here if you just provide one argument as number to the constructor function, then it considers it as the length of the array and not the element.
+- **Using the Array constructor**: You can also create an array using the Array constructor, which takes a comma-separated list of values as arguments. The point to note here if you just provide one argument as number to the constructor function, then it considers it as the length of the array and not the element.
 
 ```js
 let myArray = new Array(1, 2, 3, 4, 5);
 let myArray2 = new Array(5); // An empty array that has total length of 5.
 ```
 
-3. **Using the Array.from() method**: This method creates a new array from an _iterable object_ (as discussed above), such as an array-like object or a string.
+- **Using the Array.from() method**: This method creates a new array from an _iterable object_ (as discussed above), such as an array-like object or a string.
 
 ```js
 let myArray = Array.from('hello'); // ['h', 'e', 'l', 'l', 'o']
 ```
 
-4. **Using the Array.of() method**: This creates a new array with the specified number of elements, each initialized with the provided value.
+- **Using the Array.of() method**: This creates a new array with the specified number of elements, each initialized with the provided value.
 
 ```js
 let myArray = Array.of(1, 2, 3, 4, 5);
@@ -70,21 +70,21 @@ let myArray = Array.of(1, 2, 3, 4, 5);
 
 #### Adding Elements
 
-1. **push() method**: Adds one or more elements to the end of an array.
+- **push() method**: Adds one or more elements to the end of an array.
 
 ```js
 let arr = [1, 2, 3];
 arr.push(4); // arr is now [1, 2, 3, 4]
 ```
 
-2. **unshift() method**: Adds one or more elements to the beginning of an array.
+- **unshift() method**: Adds one or more elements to the beginning of an array.
 
 ```js
 let arr = [1, 2, 3];
 arr.unshift(0); // arr is now [0, 1, 2, 3]
 ```
 
-3. **splice() method**: Adds or removes elements from an array at a specified index. **Performs inplace updations**.
+- **splice() method**: Adds or removes elements from an array at a specified index. **Performs inplace updations**.
 
 ```js
 let arr = [1, 2, 3];
@@ -93,7 +93,7 @@ arr.splice(1, 0, 4); // arr is now [1, 4, 2, 3]
 
 In the above example, `splice()` adds the value 4 at index 1 and removes 0 elements.
 
-4. **concat() method**: Returns a new array that combines two or more arrays.
+- **concat() method**: Returns a new array that combines two or more arrays.
 
 ```js
 let arr1 = [1, 2];
@@ -103,21 +103,21 @@ let arr3 = arr1.concat(arr2); // arr3 is now [1, 2, 3, 4]
 
 #### Removing Elements
 
-1. **pop() method**: Removes the last element of an array and returns it.
+- **pop() method**: Removes the last element of an array and returns it.
 
 ```js
 let arr = [1, 2, 3];
 let removedElement = arr.pop(); // arr is now [1, 2], removedElement is 3
 ```
 
-2. **shift() method**: Removes the first element of an array and returns it.
+- **shift() method**: Removes the first element of an array and returns it.
 
 ```js
 let arr = [1, 2, 3];
 let removedElement = arr.shift(); // arr is now [2, 3], removedElement is 1
 ```
 
-3. **splice() method**: Removes elements from an array at a specified index.
+- **splice() method**: Removes elements from an array at a specified index.
 
 ```js
 let arr = [1, 2, 3];
@@ -126,7 +126,7 @@ arr.splice(1, 1); // arr is now [1, 3]
 
 In the above example, `splice()` removes 1 element at index 1.
 
-4. **slice() method**: Returns a new array that contains a portion of the original array.
+- **slice() method**: Returns a new array that contains a portion of the original array.
 
 ```js
 let arr = [1, 2, 3, 4, 5];
@@ -137,35 +137,35 @@ In the above example, `slice()` returns a new array that contains elements from 
 
 #### Finding a value in an array
 
-1. **indexOf() method**: Returns the index of the first occurrence of a specified element in an array, or -1 if the element is not found.
+- **indexOf() method**: Returns the index of the first occurrence of a specified element in an array, or -1 if the element is not found.
 
 ```js
 let arr = ['apple', 'banana', 'orange'];
 let index = arr.indexOf('banana'); // index is 1
 ```
 
-2. **lastIndexOf() method**: Returns the index of the last occurrence of a specified element in an array, or -1 if the element is not found.
+- **lastIndexOf() method**: Returns the index of the last occurrence of a specified element in an array, or -1 if the element is not found.
 
 ```js
 let arr = ['apple', 'banana', 'orange', 'banana'];
 let index = arr.lastIndexOf('banana'); // index is 3
 ```
 
-3. **find() method**: Returns the value of the first element in an array that satisfies a specified condition, or undefined if no such element is found.
+- **find() method**: Returns the value of the first element in an array that satisfies a specified condition, or undefined if no such element is found.
 
 ```js
 let arr = [1, 2, 3, 4];
 let result = arr.find((element) => element > 2); // result is 3
 ```
 
-4. **filter() method**: Returns a new array containing all elements in an array that satisfy a specified condition.
+- **filter() method**: Returns a new array containing all elements in an array that satisfy a specified condition.
 
 ```js
 let arr = [1, 2, 3, 4];
 let filteredArray = arr.filter((element) => element > 2); // filteredArray is [3, 4]
 ```
 
-5. **includes() method**: Returns true if an array contains a specified element, and false otherwise.
+- **includes() method**: Returns true if an array contains a specified element, and false otherwise.
 
 ```js
 let arr = ['apple', 'banana', 'orange'];
@@ -207,7 +207,7 @@ arr.reverse(); // arr is [3, 5, 2, 1]
 
 ## map, forEach, reduce methods
 
-1. **map() function**: The map function creates a new array by applying a given function to each element in the original array. The resulting array will have the same length as the original array, but each element will have been transformed in some way.
+- **map() function**: The map function creates a new array by applying a given function to each element in the original array. The resulting array will have the same length as the original array, but each element will have been transformed in some way.
 
 ```js
 const numbers = [1, 2, 3, 4];
@@ -215,7 +215,7 @@ const doubled = numbers.map((num) => num * 2);
 console.log(doubled); // [2, 4, 6, 8]
 ```
 
-2. **forEach() function**: The forEach function allows you to iterate over each element in an array and perform some action on it. This function does not create a new array; it simply executes a function for each element in the original array.
+- **forEach() function**: The forEach function allows you to iterate over each element in an array and perform some action on it. This function does not create a new array; it simply executes a function for each element in the original array.
 
 ```js
 const names = ['Alice', 'Bob', 'Charlie'];
@@ -230,7 +230,7 @@ I'll try to cover reduce method in separate blog post and attach the reference s
 
 The Spread operator in JavaScript is denoted by three dots `...`. It allows an iterable (like an array or a string) to be expanded into individual elements. The Spread operator can be used in multiple ways:
 
-1. **Expanding an array into individual elements**:
+- **Expanding an array into individual elements**:
 
 ```js
 const arr1 = [1, 2, 3];
@@ -241,7 +241,7 @@ const combinedArr = [...arr1, ...arr2];
 console.log(combinedArr); // [1, 2, 3, 4, 5, 6]
 ```
 
-2. **Passing an array as function arguments**:
+- **Passing an array as function arguments**:
 
 ```js
 const arr = [1, 2, 3];
@@ -255,7 +255,7 @@ const result = sum(...arr);
 console.log(result); // 6
 ```
 
-3. **Copying an array**:
+- **Copying an array**:
 
 ```js
 const arr1 = [1, 2, 3];
