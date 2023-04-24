@@ -222,7 +222,7 @@ const names = ['Alice', 'Bob', 'Charlie'];
 names.forEach((name) => console.log(name));
 ```
 
-I'll try to cover reduce method in separate blog post and attach the reference since it require greater attention.
+I've covered reduce method in **[this blog post](https://mandy8055.github.io/blog/reduce-in-js)** since it require greater attention.
 
 ## The Spread Operator and Array destructuring
 
