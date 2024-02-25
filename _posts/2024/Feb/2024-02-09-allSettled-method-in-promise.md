@@ -8,7 +8,7 @@ style: fill
 color: info
 ---
 
-In this post, I'll try to share my learning around _[`Promise.allSettled`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled)_ method which would be useful for understanding its usage and applying it for your specific requirement.
+In this post, I'll try to share my learning around _[Promise.allSettled](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled)_ method which would be useful for understanding its usage and applying it for your specific requirement.
 
 ### What `Promise.allSettled()` does?
 
@@ -98,5 +98,42 @@ Promise.allSettled([promise1, promise2, promise3])
      });
    });
    ```
+
+### Polyfill for `Promise.allSettled()`
+
+`Promise.allSettled()` is supported in modern browsers and Node.js, but it might not be available in older environments. By creating a polyfill, we ensure that our code can run in environments that do not natively support `Promise.allSettled()`.
+
+#### Implementation steps:
+
+1. Define the function that takes an array of promises.
+2. Create an executor function to handle promise resolution and rejection.
+3. Resolve the case when the input array is empty.
+4. Iterate through the input promises and handle their resolved values.
+5. Return a new promise that will always resolve with an array of resolved and rejected promises based on input array.
+
+```js
+function allSettled(promises) {
+  const executorFunction = (resolve, _) => {
+    const result = [];
+    let pendingCount = promises.length;
+    // base case
+    if (pendingCount === 0) {
+      resolve(result);
+      return;
+    }
+    promises.forEach((promise, idx) => {
+      Promise.resolve(promise)
+        .then((value) => (result[idx] = { status: 'fulfilled', value }))
+        .catch((reason) => (result[idx] = { status: 'rejected', reason }))
+        .finally(() => {
+          if (--pendingCount === 0) {
+            resolve(result);
+          }
+        });
+    });
+  };
+  return new Promise(executorFunction);
+}
+```
 
 {% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}

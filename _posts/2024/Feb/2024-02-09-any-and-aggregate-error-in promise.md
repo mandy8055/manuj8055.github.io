@@ -8,7 +8,7 @@ style: fill
 color: info
 ---
 
-In this post, I'll try to share my learning around _[`Promise.any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any)_ method and _[AggregateError](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AggregateError)_ class which would be useful for understanding its usage and applying it for your specific requirement.
+In this post, I'll try to share my learning around _[Promise.any](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any)_ method and _[AggregateError](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AggregateError)_ class which would be useful for understanding its usage and applying it for your specific requirement.
 
 ### What `Promise.any()` does?
 
@@ -108,5 +108,47 @@ Promise.any([promise1, promise2, promise3])
      .catch((error) => console.error('Failed to get data:', error));
    // Output: Data fetched: { ... } from the local cache or the remote API
    ```
+
+### Polyfill for `Promise.any()`
+
+`Promise.any()` is supported in modern browsers and Node.js, but it might not be available in older environments. By creating a polyfill, we ensure that our code can run in environments that do not natively support `Promise.any()`.
+
+#### Implementation steps:
+
+1. Define the function that takes an array of promises.
+2. Create an executor function to handle promise resolution and rejection.
+3. Reject the case when the input array is empty.
+4. Iterate through the input promises and handle their rejected values in an array.
+5. Return a new promise that resolves if any input promise resolves and rejects as an `AggregateError` with an array of rejected values(`errors`) if all promises reject.
+
+```js
+function any(promises) {
+  const executorFunction = (resolve, reject) => {
+    // base case
+    if (promises.length === 0) {
+      reject(new AggregateError('No promise was passed inside of Promise.any'));
+      return;
+    }
+    const errors = [];
+    let pendingCount = promises.length;
+    promises.forEach((promise, idx) => {
+      Promise.resolve(promise)
+        .then((val) => resolve(val))
+        .catch((err) => {
+          errors[idx] = err;
+          if (--pendingCount === 0) {
+            reject(
+              new AggregateError(
+                'No Promise inside Promise.any resolved',
+                errors,
+              ),
+            );
+          }
+        });
+    });
+  };
+  return new Promise(executorFunction);
+}
+```
 
 {% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}

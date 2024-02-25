@@ -8,7 +8,7 @@ style: fill
 color: info
 ---
 
-In this post, I'll try to share my learning around _[`Promise.all`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)_ method which would be useful for understanding its usage and applying it for your specific requirement.
+In this post, I'll try to share my learning around _[Promise.all](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)_ method which would be useful for understanding its usage and applying it for your specific requirement.
 
 ### What `Promise.all()` does?
 
@@ -90,5 +90,40 @@ Promise.all([promise1, promise2, promise3])
        console.error('Error updating records:', error);
      });
    ```
+
+### Polyfill for `Promise.all()`
+
+`Promise.all()` is supported in modern browsers and Node.js, but it might not be available in older environments. By creating a polyfill, we ensure that our code can run in environments that do not natively support `Promise.all()`.
+
+#### Implementation steps:
+
+1. Define the function that takes an array of promises.
+2. Create an executor function to handle promise resolution and rejection.
+3. Resolve the case when the input array is empty.
+4. Iterate through the input promises and handle their resolved values.
+5. Return a new promise that resolves with an array of resolved values or rejects if any input promise rejects.
+
+```js
+function all(promises) {
+  const executorFunction = (resolve, reject) => {
+    const result = [];
+    // base case
+    if (promises.length === 0) {
+      resolve(result);
+      return;
+    }
+    let pendingCount = promises.length;
+    promises.forEach((promise, index) => {
+      Promise.resolve(promise).then((value) => {
+        result[index] = value;
+        if (--pendingCount === 0) {
+          resolve(result);
+        }
+      }, reject);
+    });
+  };
+  return new Promise(executorFunction);
+}
+```
 
 {% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}

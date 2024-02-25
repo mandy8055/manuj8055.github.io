@@ -8,7 +8,7 @@ style: fill
 color: info
 ---
 
-In this post, I'll try to share my learning around _[`Promise.race`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race)_ method which would be useful for understanding its usage and applying it for your specific requirement.
+In this post, I'll try to share my learning around _[Promise.race](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race)_ method which would be useful for understanding its usage and applying it for your specific requirement.
 
 ### What `Promise.race()` does?
 
@@ -49,5 +49,25 @@ Promise.race([promise1, promise2])
      .catch((error) => console.error(error));
    // Output: Data fetched: { ... } or "Request timed out"
    ```
+
+### Polyfill for `Promise.race()`
+
+`Promise.race()` is supported in modern browsers and Node.js, but it might not be available in older environments. By creating a polyfill, we ensure that our code can run in environments that do not natively support `Promise.race()`.
+
+#### Implementation steps:
+
+1. Iterate through the array of promises without using `await`.
+2. Convert each item in the array to a resolved promise using `Promise.resolve()`. This way, the function also supports non-promise values in the input array.
+3. Attach `resolve` and `reject` callbacks to each promise using `.then()` and `.catch()` methods. As soon as any promise resolves or rejects, the race promise will also resolve or reject accordingly.
+
+```js
+function race(promises) {
+  return new Promise((resolve, reject) => {
+    for (let promise of promises) {
+      Promise.resolve(promise).then(resolve).catch(reject);
+    }
+  });
+}
+```
 
 {% if page.comments %} {% include disqus.md url=page.url id=page.id %} {% endif %}
