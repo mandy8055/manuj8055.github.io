@@ -7,44 +7,54 @@ weight: 3
 
 # About Me
 
-Hi I am **{{ site.author.name }}** :cowboy_hat_face:,<br>
-I work under the acronym "mandy8055" across the virtual world. A student with insatiable desire to learn, jack of all trades but master of none, true patriot, motivator in the morning, fitness freak in the evening and programmer-cum-developer in night. I enjoy working on new technology and challenging problem statements. I love helping people solve their problem on github and stackoverflow.
+Hey there! I'm **{{ site.author.name }}** 🤠, a JavaScript wizard 🧙‍♂️ with a passion for turning complex problems into elegant solutions. I work under the acronym **_mandy8055_** across the virtual world.
 
-<!-- <div class="row">
-{% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
-{% include about/skills.html title="Other Skills" source=site.data.other-skills %}
-</div> -->
+By day, I'm a UI Lead at Publicis Sapient, architecting scalable applications and pushing the boundaries of web development. By night, I'm a coding enthusiast who loves contributing to open-source and solving challenges on Stack Overflow and LeetCode.
 
-<!-- ## **Achievements**
-- Achieved Certificate of Recognition in GirlScript Summer of Code 2018
-- Won **Gold** in Coding Hackathon at **Inter IIT Tech Meet 2018 and 2019**
-- Achieved Certificate of Appreciation from IIT Jammu for Sports Fest 2018
-- Selected in **GSoC 2019**
-- Secured place in top 20 teams in Pan IIT Hackathon 2019
-- Cracked JEE main and JEE Advanced 2016 -->
+## 💼 Professional Snapshot
 
-## Skills
+- **Experience Engineer** at Publicis Sapient, where I:
 
-- HTML5/CSS3
-- Javascript
-- Typescript
-- ReactJs
-- Next14
-- Webpack5
-- SCSS
-- TailwindCSS
-- Storybook
-- Unit and Automation testing
-- shadcn/ui
-- AWS
-- Java
-- Linux
-- MySQL
-- Flutter
-- Android Studio
-- Version Control
+  - Optimized application performance, achieving a **20% improvement** in load times
+  - Led UI architecture design and CI/CD pipeline implementation
+  - Improved user engagement by **4X** through strategic design upgrades
 
-<!-- ## **Internships**
-<div class="row">
-{% include about/timeline.html %}
-</div> -->
+- **Freelance Web Developer** who has:
+  - Built robust web applications using React, Redux, and AWS
+  - Integrated complex APIs and solved critical technical challenges
+
+## 🏆 Key Achievements
+
+- 🏅 Arctic Code Vault Contributor on GitHub
+- 🌟 Multiple awards at Publicis Sapient, including Core Values and Star of the Month
+- 🧠 AWS Certified Cloud Practitioner
+- 🏆 Qualified GATE exam twice (2020 & 2021)
+- 🥇 Gold medalist in Coding Hackathon at DIT Tech Fest 2016
+- 📚 Cracked JEE mains in 2013
+
+## 🛠 Tech Arsenal
+
+**Languages & Frameworks:**
+
+- JavaScript, TypeScript, ReactJs
+- Node.js, React Native
+- HTML5, CSS3, SCSS, Tailwind CSS
+
+**Tools & Technologies:**
+
+- Redux, Storybook, Framer Motion
+- AWS, Azure
+- Jest, Cypress, Vitest
+- Git, Jenkins, GitHub Actions
+
+## 🎭 Beyond Code
+
+When I'm not crafting pixel-perfect interfaces or solving algorithmic puzzles, you'll find me:
+
+- 🏃‍♂️ Running and maintaining a disciplined fitness routine
+- 🎸 Strumming melodies on my guitar
+- 🏊 Swimming (State Championship medalist!)
+- 🌐 Exploring new technologies
+- 🤝 Contributing to open-source communities
+
+> **Wellness Philosophy:** Balancing mental agility with physical fitness, believing that a healthy body fuels a sharp mind.
